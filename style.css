@@ -1,0 +1,93 @@
+:root {
+    --raio: -650px;
+    --distExtra: 0px
+}
+body{
+    height: 300vh; /* só pra permitir rolar */
+    margin:0;
+  }
+  
+  /* barra de progresso do scroll (timeline via scroll()) */
+
+  
+  .conteinerScroll {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    position: fixed;
+    justify-content: center;
+    align-items: center;
+    transform: translateY(550px);
+
+    background-color: aqua;
+    
+
+  }
+  .conteinerScroll > div {
+    animation: puxarOsBurgao linear reverse;
+    animation-timeline: scroll();
+    position: absolute;
+
+      /* ponto de rotação fica bem longe, criando o movimento circular */
+    transform-origin: bottom center;
+     will-change: transform, opacity;
+}
+.conteinerScroll > div:nth-child(2) {
+    animation: puxarOsBurgao linear reverse;
+    animation-timeline: scroll();
+    position: absolute;
+    animation-range: 20% 115%;
+    scale: 1;
+      /* ponto de rotação fica bem longe, criando o movimento circular */
+    transform-origin: bottom center;
+     will-change: transform, opacity;
+}
+.conteinerScroll > div:nth-child(3) {
+    animation: puxarOsBurgao linear reverse;
+    animation-timeline: scroll();
+    position: absolute;
+    animation-range: 40% 125%;
+    scale: 1;
+      /* ponto de rotação fica bem longe, criando o movimento circular */
+    transform-origin: bottom center;
+     will-change: transform, opacity;
+}
+
+.conteinerScroll > div:nth-child(4) {
+    animation: puxarOsBurgao linear reverse;
+    animation-timeline: scroll();
+    position: absolute;
+    animation-range: 60% 135%;
+    scale: 1;
+      /* ponto de rotação fica bem longe, criando o movimento circular */
+    transform-origin: bottom center;
+     will-change: transform, opacity;
+}
+.conteinerScroll > div:nth-child(5) {
+    animation: puxarOsBurgao linear reverse;
+    animation-timeline: scroll();
+    position: absolute;
+    animation-range: 80% 135%;
+    scale: 1;
+      /* ponto de rotação fica bem longe, criando o movimento circular */
+    transform-origin: bottom center;
+     will-change: transform, opacity;
+}
+  .conteinerScroll > div > img {
+    width: 400px;
+    height: 400px;
+    display: block;
+  }
+
+
+  @keyframes puxarOsBurgao {
+    from {
+      transform: rotate(-75deg) translateY(var(--raio));
+    }
+    to {
+      transform: rotate(75deg) translateY(var(--raio));
+    }
+  }
+  
+  
+  

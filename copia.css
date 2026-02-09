@@ -1,0 +1,46 @@
+body{
+    height: 400vh; /* só pra permitir rolar */
+    margin:0;
+  }
+  
+  /* barra de progresso do scroll (timeline via scroll()) */
+
+  
+  .conteinerScroll {
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+    position: fixed;
+    left: 50%;
+    bottom: -10%;
+    transform: translateX(0%);
+    animation: puxarOsBurgao linear;
+    animation-timeline: scroll();
+  }
+  .conteinerScroll > div {
+    transform-origin: center bottom;
+  }
+  .conteinerScroll > div:nth-child(1) {
+    transform: translateY(100px) rotate(-28deg);
+  }
+
+  .conteinerScroll > div > img {
+    width: 1200px;
+    height: 1200px;
+    display: block;
+  }
+
+
+  @keyframes puxarOsBurgao{
+    0%{
+      transform: translateX(3000px) rotate(50deg);
+    }
+    50% {
+        transform: translateX(000px) rotate(20deg);
+        bottom: 30%;
+    }
+    100%{
+      transform: translateX(-2300px) rotate(0deg);
+    }
+  }
+  
