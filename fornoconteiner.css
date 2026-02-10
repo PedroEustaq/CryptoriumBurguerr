@@ -1,0 +1,57 @@
+.cabecaForno > h1 {
+    color: white;
+}
+.cabecaForno {
+    display: flex;
+    justify-content:flex-start;
+    align-items: center;
+}
+
+.ScrollForno {
+    background-color: rgb(0, 0, 0);
+    height: 400px;
+    display: flex;
+}
+.BlocoBurguer {
+    height: 392px;
+    width: 290px;
+    background-color: rgb(0, 0, 0);
+    display: flex;
+    flex-flow: column nowrap;
+    border: 1px solid white;
+    margin-right: 10px;
+}
+.InfoBurguer {
+    height: 45%;
+    background-color: rgb(0, 0, 0);
+    color: white;
+    border-top: 1px solid white;
+    padding-left: 15px;
+    font-weight: 600;
+
+    z-index: 1;
+}
+.InfoBurguer:hover {
+    cursor: pointer;
+}
+.promocionalBurguer {
+    height: 55%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    background-color: #111111;
+}
+.fundo {
+    background-color: yellow;
+    width: 85%;
+    height: 95%;
+    border-top-left-radius: 130.5px;
+    border-top-right-radius: 130.5px;
+
+}
+.promocionalBurguer > img {
+    position: absolute;
+    width: 16%;
+    max-width: 250px;
+    transform: translateX(10px) translateY(35px);
+}
