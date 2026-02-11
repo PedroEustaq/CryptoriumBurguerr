@@ -1,5 +1,5 @@
 .GrandaoBisteca {
-    height: 4000px;
+    height: 6000px;
     background-color: brown;
     width: 100%;
     display: flex;
@@ -16,42 +16,69 @@
 .RolarAmburguer {
     width: 50%;
     position: sticky;
-    background-color: blueviolet;
+    background-color: rgb(255, 22, 22);
     top: 0px;
-    height: 1000px;
+    height: 500px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
 }
 
+@keyframes desceAmborg {
+    0% {
+scale: 0.1;
+    }
+    100% {
+scale: 1;
+    }
+    
+}
+@keyframes flexDoBurgao {
+    0% {
+        transform: translateX(-800px) translateY(-50px);
+        scale: 1;
+    }
+    100% {
+        transform: translateX(800px) translateY(50px);
+        scale: 2;
+    }
+    
+}
 
 .RolarAmburguer > div {
-    animation: puxarOsBurgao linear;
+    animation: flexDoBurgao linear;
     animation-timeline: scroll();
-    width: 100%;
+    height: 70%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
       /* ponto de rotação fica bem longe, criando o movimento circular */
-    transform-origin: left center;
     will-change: transform, opacity;
-    animation-range: 40% 80%;
+    animation-range: 50% 80%;
 }
 
 .RolarAmburguer > div > img {
-    width: 70%;
+    height: 100%;
 }
 .Anuncio {
     width: 50%;
     position: sticky;
     height: 1000px;
-    top: 0;   /* obrigatório para sticky funcionar */
-    align-self: flex-start;   /* gruda no topo ao rolar */
-    background-color: aquamarine;
+    top: 0;   
+    align-self: flex-start;   
+    background-color: rgb(31, 31, 31);
     display: flex;
     flex-flow: column nowrap;
     justify-content: center;
-    align-items: start;
+    align-items: flex-start;
 }
 
 .Anuncio>p {
     font-size: xx-large;
     font-weight: 800;
+    text-align: left;
 }
 
 
@@ -79,17 +106,17 @@
 
 .Anuncio>img:nth-child(1) {
     animation: cair 700ms ease-out forwards;
-    top: 50px;
-    opacity: 0;
     animation-timeline: scroll();
-    position: relative;
-
+    position: absolute;
     /* ponto de rotação fica bem longe, criando o movimento circular */
 
+    top: 50px;
+    left: 70px;
+    width: 70%;
     will-change: transform, opacity;
 
     transform-origin: center bottom;
-    animation-range: 30% 100%;
+    animation-range: 40% 100%;
 }
 
 .Anuncio>img:nth-child(2) {
@@ -97,14 +124,15 @@
     animation: cair 700ms ease-out forwards;
     animation-timeline: scroll();
     position: absolute;
-
     /* ponto de rotação fica bem longe, criando o movimento circular */
 
     top: 50px;
+    left: 70px;
+    width: 70%;
     will-change: transform, opacity;
 
     transform-origin: center bottom;
-
+    animation-range: 20% 60%;
 }
 
 

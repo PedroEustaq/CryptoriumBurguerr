@@ -21,6 +21,7 @@
             <button>Vem conhecer <img src="SolarSeta.svg" alt=""></button>
         </div>
     </section>
+    <!--
     <section class="FornoConteiner">
         <div class="cabecaForno">
             <img src="Fire.svg" alt="">
@@ -86,11 +87,10 @@
 
 
     </section>
+    -->
     <section class="AnimacaoComBurgao">
 
-
-
-        <h1>os mais lucrativos da cozinha</h1>
+        <h1>os mais lucrativos da cozinha.</h1>
         <section class="conteinerScroll" aria-hidden="true">
             <div class="burguerTeste"><img src="bitcoinburguer.png" alt="Bitcoin Burger"></div>
 
@@ -112,6 +112,8 @@
         <section class="RolarAmburguer" aria-hidden="true">
             <div class="burguerTeste"><img src="bitcoinburguer.png" alt="Bitcoin Burger"></div>
         </section>
+        
+     
 
         <div class="Anuncio">
             <img src="./SolAna.png" alt="">
@@ -269,5 +271,23 @@
     </section>
 
 </body>
+<script src="https://unpkg.com/lenis@1.3.17/dist/lenis.min.js"></script>
+
+
+<script>
+const lenis = new Lenis({
+  duration: 1.3, // quanto maior, mais suave
+  smoothWheel: true
+});
+
+function raf(time) {
+  lenis.raf(time);
+  requestAnimationFrame(raf);
+}
+
+requestAnimationFrame(raf);
+
+
+</script>
 
 </html>

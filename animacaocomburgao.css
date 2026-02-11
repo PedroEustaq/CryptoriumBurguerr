@@ -1,15 +1,15 @@
 :root {
-    --raio: -600px;
+    --raio: -500px;
     --distExtra: 0px
 }
 
 
 .AnimacaoComBurgao {
-    height: 5000px;
+    height: 4000px;
     z-index: 7;
     width: 100%;
-    background-color: aqua;
-
+    background-color: rgb(255, 170, 0);
+    position: relative;
 
 
 }
@@ -23,19 +23,21 @@
     justify-content: center;
     align-items: flex-end;
     background-color: rgb(255, 170, 0);
-    transform: translateY(150px);
+    transform: translateY(0px);
 
 
 }
 .AnimacaoComBurgao > h1 {
     position: sticky;
-    display: flex;
-    position: sticky;
+    text-align: center;
+    font-weight: 800;
     top: 0;
-    justify-content: center;
-    align-items: flex-end;
-    background-color: rgb(255, 170, 0);
-    transform: translateY(-100px);
+    z-index: 2;
+    left: 50%;
+    font-size: 50px;
+    background-color: rgba(255, 153, 44, 0);
+    padding-top: 50px;
+
 }
 
 .stickyNote{
@@ -55,7 +57,7 @@
     animation-timeline: scroll();
     position: absolute;
 
-
+    animation-range: 12% 45%;
     transform-origin: bottom center;
     will-change: transform, opacity;
 }
@@ -64,7 +66,7 @@
     animation: puxarOsBurgao linear reverse;
     animation-timeline: scroll();
     position: absolute;
-    animation-range: 20% 115%;
+    animation-range: 18% 53%;
     scale: 1;
 
     transform-origin: bottom center;
@@ -75,7 +77,7 @@
     animation: puxarOsBurgao linear reverse;
     animation-timeline: scroll();
     position: absolute;
-    animation-range: 40% 125%;
+    animation-range: 26% 58%;
     scale: 1;
     /* ponto de rotação fica bem longe, criando o movimento circular */
     transform-origin: bottom center;
@@ -86,7 +88,7 @@
     animation: puxarOsBurgao linear reverse;
     animation-timeline: scroll();
     position: absolute;
-    animation-range: 60% 135%;
+    animation-range: 32% 66%;
     scale: 1;
     /* ponto de rotação fica bem longe, criando o movimento circular */
     transform-origin: bottom center;
@@ -97,7 +99,7 @@
     animation: puxarOsBurgao linear reverse;
     animation-timeline: scroll();
     position: absolute;
-    animation-range: 80% 135%;
+    animation-range: 40% 72%;
     scale: 1;
     /* ponto de rotação fica bem longe, criando o movimento circular */
     transform-origin: bottom center;
@@ -123,12 +125,22 @@
 
 
 @keyframes puxarOsBurgao {
-    from {
+    0% {
         transform: rotate(-75deg) translateY(var(--raio));
+        opacity: 0;
+        
     }
 
-    to {
+    10% {
+        opacity: 1;
+    }
+    95% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
         transform: rotate(75deg) translateY(var(--raio));
+        
     }
 }
 

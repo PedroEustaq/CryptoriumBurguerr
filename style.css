@@ -1,12 +1,17 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
 
+html {
+  scroll-behavior: smooth;
+}
+
 :root {
    --distExtra: 0px
 }
 
 
 body{
-    height: 300vh; /* só pra permitir rolar */
+
+    height: 100vh; /* só pra permitir rolar */
    margin:0;
    background-color: #000000;
    font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
