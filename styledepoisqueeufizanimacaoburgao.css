@@ -1,0 +1,159 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+:root {
+   --raio: -650px;
+   --distExtra: 0px
+}
+
+
+body{
+    height: 300vh; /* só pra permitir rolar */
+   margin:0;
+   background-color: #000000;
+   font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+ }
+  
+  /* barra de progresso do scroll (timeline via scroll()) */
+
+  .LandingHome {
+    width: 100%;
+    height: 1440px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    background-color:rgb(0, 0, 0);
+  }
+  .LandingHome >img{
+    position: absolute;
+    width: 70%;
+    top: 10px;
+    max-width: 1000px;
+  }
+  
+  .conteinerHome {
+    font-size: xx-large;
+    z-index: 2;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-flow: column nowrap;
+    margin-top: 250px;
+  }
+  .conteinerHome > h1 {
+    width: 55%;
+    font-weight: 900;
+    text-align: center;
+  }
+
+  .conteinerHome > button {
+    background-color: rgba(0, 0, 0, 0.16);
+    font-weight: 100;
+    color: white;
+    border-radius: 40px;
+    font-size: 25px;
+    padding: 10px 25px;
+    border: 1px solid white;
+
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+  }
+  .conteinerHome > button:hover {
+    cursor: pointer;
+  }
+  .conteinerHome > button > img {
+    height: 35px;
+  }
+  .conteinerScroll {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    position: fixed;
+    justify-content: center;
+    align-items: center;
+    transform: translateY(550px);
+
+    background-color: aqua;
+    
+
+  }
+  .conteinerScroll > div {
+    animation: puxarOsBurgao linear reverse;
+    animation-timeline: scroll();
+    position: absolute;
+
+      /* ponto de rotação fica bem longe, criando o movimento circular */
+    transform-origin: bottom center;
+     will-change: transform, opacity;
+}
+.conteinerScroll > div:nth-child(2) {
+    animation: puxarOsBurgao linear reverse;
+    animation-timeline: scroll();
+    position: absolute;
+    animation-range: 20% 115%;
+    scale: 1;
+      /* ponto de rotação fica bem longe, criando o movimento circular */
+    transform-origin: bottom center;
+     will-change: transform, opacity;
+}
+.conteinerScroll > div:nth-child(3) {
+    animation: puxarOsBurgao linear reverse;
+    animation-timeline: scroll();
+    position: absolute;
+    animation-range: 40% 125%;
+    scale: 1;
+      /* ponto de rotação fica bem longe, criando o movimento circular */
+    transform-origin: bottom center;
+     will-change: transform, opacity;
+}
+
+.conteinerScroll > div:nth-child(4) {
+    animation: puxarOsBurgao linear reverse;
+    animation-timeline: scroll();
+    position: absolute;
+    animation-range: 60% 135%;
+    scale: 1;
+      /* ponto de rotação fica bem longe, criando o movimento circular */
+    transform-origin: bottom center;
+     will-change: transform, opacity;
+}
+.conteinerScroll > div:nth-child(5) {
+    animation: puxarOsBurgao linear reverse;
+    animation-timeline: scroll();
+    position: absolute;
+    animation-range: 80% 135%;
+    scale: 1;
+      /* ponto de rotação fica bem longe, criando o movimento circular */
+    transform-origin: bottom center;
+     will-change: transform, opacity;
+}
+
+.conteinerScroll > div:nth-child(6) {
+  animation: puxarOsBurgao linear reverse;
+  animation-timeline: scroll();
+  position: absolute;
+  animation-range: 90% 145%;
+  scale: 1;
+    /* ponto de rotação fica bem longe, criando o movimento circular */
+  transform-origin: bottom center;
+   will-change: transform, opacity;
+}
+  .conteinerScroll > div > img {
+    width: 400px;
+    height: 400px;
+    display: block;
+  }
+
+
+  @keyframes puxarOsBurgao {
+    from {
+      transform: rotate(-75deg) translateY(var(--raio));
+    }
+    to {
+      transform: rotate(75deg) translateY(var(--raio));
+    }
+  }
+  
+  
+  

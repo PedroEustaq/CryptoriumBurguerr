@@ -1,0 +1,144 @@
+:root {
+    --raio: -600px;
+    --distExtra: 0px
+}
+
+
+.AnimacaoComBurgao {
+    height: 5000px;
+    z-index: 7;
+    width: 100%;
+    background-color: aqua;
+
+
+
+}
+
+.conteinerScroll {
+    width: 100%;
+    height: 1000px;
+    display: flex;
+    position: sticky;
+    top: 0;
+    justify-content: center;
+    align-items: flex-end;
+    background-color: rgb(255, 170, 0);
+    transform: translateY(150px);
+
+
+}
+.AnimacaoComBurgao > h1 {
+    position: sticky;
+    display: flex;
+    position: sticky;
+    top: 0;
+    justify-content: center;
+    align-items: flex-end;
+    background-color: rgb(255, 170, 0);
+    transform: translateY(-100px);
+}
+
+.stickyNote{
+  position: sticky;
+  top: 0;                      /* ou top: 80px se quiser descer */
+  height: 100vh;    
+  width: 1000px;           /* ocupa a viewport */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;            /* corta o que sair do palco */
+  background: rgb(255, 170, 0);
+}
+
+.conteinerScroll>div {
+    animation: puxarOsBurgao linear reverse;
+    animation-timeline: scroll();
+    position: absolute;
+
+
+    transform-origin: bottom center;
+    will-change: transform, opacity;
+}
+
+.conteinerScroll>div:nth-child(2) {
+    animation: puxarOsBurgao linear reverse;
+    animation-timeline: scroll();
+    position: absolute;
+    animation-range: 20% 115%;
+    scale: 1;
+
+    transform-origin: bottom center;
+    will-change: transform, opacity;
+}
+
+.conteinerScroll>div:nth-child(3) {
+    animation: puxarOsBurgao linear reverse;
+    animation-timeline: scroll();
+    position: absolute;
+    animation-range: 40% 125%;
+    scale: 1;
+    /* ponto de rotação fica bem longe, criando o movimento circular */
+    transform-origin: bottom center;
+    will-change: transform, opacity;
+}
+
+.conteinerScroll>div:nth-child(4) {
+    animation: puxarOsBurgao linear reverse;
+    animation-timeline: scroll();
+    position: absolute;
+    animation-range: 60% 135%;
+    scale: 1;
+    /* ponto de rotação fica bem longe, criando o movimento circular */
+    transform-origin: bottom center;
+    will-change: transform, opacity;
+}
+
+.conteinerScroll>div:nth-child(5) {
+    animation: puxarOsBurgao linear reverse;
+    animation-timeline: scroll();
+    position: absolute;
+    animation-range: 80% 135%;
+    scale: 1;
+    /* ponto de rotação fica bem longe, criando o movimento circular */
+    transform-origin: bottom center;
+    will-change: transform, opacity;
+}
+
+.conteinerScroll>div:nth-child(6) {
+    animation: puxarOsBurgao linear reverse;
+    animation-timeline: scroll();
+    position: absolute;
+    animation-range: 90% 145%;
+    scale: 1;
+    /* ponto de rotação fica bem longe, criando o movimento circular */
+    transform-origin: bottom center;
+    will-change: transform, opacity;
+}
+
+.conteinerScroll>div>img {
+    width: 400px;
+    height: 400px;
+    display: block;
+}
+
+
+@keyframes puxarOsBurgao {
+    from {
+        transform: rotate(-75deg) translateY(var(--raio));
+    }
+
+    to {
+        transform: rotate(75deg) translateY(var(--raio));
+    }
+}
+
+@keyframes seguirHamburguer {
+    from {
+        transform:translateY(0px);
+    }
+    to {
+        position: absolute;
+        transform:translateY(300px);
+    }
+    
+}

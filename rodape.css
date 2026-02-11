@@ -1,0 +1,123 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    background-color: #000;
+    color: #fff;
+}
+
+.rodape {
+    background-color: #000;
+    color: #fff;
+    padding: 40px 24px 32px;
+    border-top: 1px solid white;
+}
+
+.rodape-conteudo {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    gap: 56px;
+    align-items: flex-start;
+    justify-content: space-between;
+}
+
+.rodape-coluna h3 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 12px;
+}
+
+.rodape-lista {
+    list-style: none;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin-bottom: 16px;
+}
+
+.rodape-lista li {
+    margin-bottom: 4px;
+}
+
+.rodape-lista a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.rodape-lista a:hover {
+    text-decoration: underline;
+}
+
+.rodape-mapa {
+    margin-top: 16px;
+}
+
+.rodape-mapa img {
+    display: block;
+    width: 260px;
+    height: 260px;
+    object-fit: cover;
+    border-radius: 4px;
+}
+
+.rodape-icones-sociais {
+    display: flex;
+    gap: 12px;
+    margin: 8px 0 24px;
+}
+
+.icone-social {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    border: 1px solid #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.75rem;
+    text-decoration: none;
+    color: #fff;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.icone-social:hover {
+    background-color: #fff;
+    color: #000;
+}
+
+.rodape-logo img {
+    display: block;
+    width: 180px;
+    height: auto;
+}
+
+.rodape-direitos {
+    max-width: 1200px;
+    margin: 24px auto 0;
+    display: flex;
+    justify-content: flex-end;
+    font-size: 0.8rem;
+    color: #ccc;
+    text-align: right;
+}
+
+@media (max-width: 900px) {
+    .rodape-conteudo {
+        flex-direction: column;
+        gap: 32px;
+    }
+
+    .rodape-mapa img {
+        width: 100%;
+        max-width: 320px;
+    }
+
+    .rodape-direitos {
+        justify-content: center;
+        text-align: center;
+    }
+}

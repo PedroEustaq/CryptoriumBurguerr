@@ -1,0 +1,126 @@
+.GrandaoBisteca {
+    height: 4000px;
+    background-color: brown;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+}
+
+* {
+    padding: 0px;
+    margin: 0px;
+}
+
+
+.RolarAmburguer {
+    width: 50%;
+    position: sticky;
+    background-color: blueviolet;
+    top: 0px;
+    height: 1000px;
+}
+
+
+.RolarAmburguer > div {
+    animation: puxarOsBurgao linear;
+    animation-timeline: scroll();
+    width: 100%;
+
+      /* ponto de rotação fica bem longe, criando o movimento circular */
+    transform-origin: left center;
+    will-change: transform, opacity;
+    animation-range: 40% 80%;
+}
+
+.RolarAmburguer > div > img {
+    width: 70%;
+}
+.Anuncio {
+    width: 50%;
+    position: sticky;
+    height: 1000px;
+    top: 0;   /* obrigatório para sticky funcionar */
+    align-self: flex-start;   /* gruda no topo ao rolar */
+    background-color: aquamarine;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: start;
+}
+
+.Anuncio>p {
+    font-size: xx-large;
+    font-weight: 800;
+}
+
+
+.DivPreco {
+    width: 100%;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.buttonPreco {
+    padding: 15px 20px;
+    border-radius: 90px;
+    width: 150px;
+    background-color: transparent;
+    border: 1px green solid;
+    font-size: medium;
+
+}
+
+.DivPreco>img {
+    height: 70%;
+}
+
+.Anuncio>img:nth-child(1) {
+    animation: cair 700ms ease-out forwards;
+    top: 50px;
+    opacity: 0;
+    animation-timeline: scroll();
+    position: relative;
+
+    /* ponto de rotação fica bem longe, criando o movimento circular */
+
+    will-change: transform, opacity;
+
+    transform-origin: center bottom;
+    animation-range: 30% 100%;
+}
+
+.Anuncio>img:nth-child(2) {
+
+    animation: cair 700ms ease-out forwards;
+    animation-timeline: scroll();
+    position: absolute;
+
+    /* ponto de rotação fica bem longe, criando o movimento circular */
+
+    top: 50px;
+    will-change: transform, opacity;
+
+    transform-origin: center bottom;
+
+}
+
+
+@keyframes cair {
+    0% {
+        transform: perspective(800px) rotateX(90deg);
+        opacity: 0;
+    }
+
+    50% {
+        transform: perspective(800px) rotateX(0deg);
+        opacity: 1;
+    }
+
+    100% {
+        transform: perspective(800px) rotateX(-90deg);
+        opacity: 1;
+    }
+}
