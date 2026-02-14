@@ -38,17 +38,38 @@ scale: 1;
     0% {
         transform: translateX(-800px) translateY(-50px);
         scale: 1;
+        opacity: 0;
+    }
+    10% {
+        opacity: 1;
     }
     100% {
+        opacity: 1;
         transform: translateX(800px) translateY(50px);
         scale: 2;
     }
     
 }
 
-.RolarAmburguer > div {
+.RolarAmburguer > div:nth-child(1) {
     animation: flexDoBurgao linear;
     animation-timeline: scroll();
+    height: 70%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    position: absolute;
+      /* ponto de rotação fica bem longe, criando o movimento circular */
+    will-change: transform, opacity;
+    animation-range: 30% 80%;
+}
+
+.RolarAmburguer > div:nth-child(2) {
+    animation: flexDoBurgao linear;
+    animation-timeline: scroll();
+    position: absolute;
+    opacity: 0;
     height: 70%;
     display: flex;
     justify-content: center;
@@ -56,7 +77,22 @@ scale: 1;
 
       /* ponto de rotação fica bem longe, criando o movimento circular */
     will-change: transform, opacity;
-    animation-range: 50% 80%;
+    animation-range: 55% 90%;
+}
+
+.RolarAmburguer > div:nth-child(3) {
+    opacity: 0;
+    animation: flexDoBurgao linear;
+    animation-timeline: scroll();
+    position: absolute;
+    height: 70%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+      /* ponto de rotação fica bem longe, criando o movimento circular */
+    will-change: transform, opacity;
+    animation-range: 65% 100%;
 }
 
 .RolarAmburguer > div > img {
@@ -66,19 +102,30 @@ scale: 1;
     width: 50%;
     position: sticky;
     height: 1000px;
-    top: 0;   
-    align-self: flex-start;   
-    background-color: rgb(31, 31, 31);
+    top: 0;
+    align-self: flex-start;
+    background: linear-gradient(165deg, #1f1f1f 0%, #2a2a2a 50%, #252525 100%);
     display: flex;
     flex-flow: column nowrap;
     justify-content: center;
     align-items: flex-start;
+    padding: 2rem 2.5rem;
+    border-radius: 24px;
+    margin: 0 1rem;
+    box-shadow:
+        0 4px 24px rgba(0, 0, 0, 0.4),
+        0 0 0 1px rgba(255, 255, 255, 0.06) inset;
 }
 
-.Anuncio>p {
+.Anuncio > p {
     font-size: xx-large;
     font-weight: 800;
     text-align: left;
+    color: #f0f0f0;
+    line-height: 1.25;
+    max-width: 90%;
+    letter-spacing: -0.02em;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
 }
 
 
@@ -91,20 +138,40 @@ scale: 1;
 }
 
 .buttonPreco {
-    padding: 15px 20px;
-    border-radius: 90px;
-    width: 150px;
-    background-color: transparent;
-    border: 1px green solid;
-    font-size: medium;
+    padding: 16px 32px;
+    border-radius: 999px;
+    min-width: 160px;
+    background: linear-gradient(135deg, #22c55e 0%, #16a34a 100%);
+    border: none;
+    color: #fff;
+    font-size: 1rem;
+    font-weight: 700;
+    letter-spacing: 0.03em;
+    cursor: pointer;
+    box-shadow:
+        0 4px 14px rgba(34, 197, 94, 0.4),
+        0 0 0 1px rgba(255, 255, 255, 0.15) inset;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, filter 0.2s ease;
+}
 
+.buttonPreco:hover {
+    transform: translateY(-2px);
+    box-shadow:
+        0 6px 20px rgba(34, 197, 94, 0.5),
+        0 0 0 1px rgba(255, 255, 255, 0.2) inset;
+    filter: brightness(1.08);
+}
+
+.buttonPreco:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 8px rgba(34, 197, 94, 0.35);
 }
 
 .DivPreco>img {
     height: 70%;
 }
 
-.Anuncio>img:nth-child(1) {
+.Anuncio>img:nth-child(2) {
     animation: cair 700ms ease-out forwards;
     animation-timeline: scroll();
     position: absolute;
@@ -113,26 +180,42 @@ scale: 1;
     top: 50px;
     left: 70px;
     width: 70%;
+    opacity: 0;
     will-change: transform, opacity;
 
     transform-origin: center bottom;
-    animation-range: 40% 100%;
+    animation-range: 60% 82%;
+    opacity: 0;
 }
 
-.Anuncio>img:nth-child(2) {
+.Anuncio>img:nth-child(3) {
 
     animation: cair 700ms ease-out forwards;
     animation-timeline: scroll();
     position: absolute;
     /* ponto de rotação fica bem longe, criando o movimento circular */
+    top: 50px;
+    left: 70px;
+    width: 70%;
+    opacity: 0;
+    will-change: transform, opacity;
 
+    transform-origin: center bottom;
+    animation-range: 45% 70%;
+}
+.Anuncio>img:nth-child(1) {
+opacity: 0;
+    animation: cair 700ms ease-out forwards;
+    animation-timeline: scroll();
+    position: absolute;
+    /* ponto de rotação fica bem longe, criando o movimento circular */
     top: 50px;
     left: 70px;
     width: 70%;
     will-change: transform, opacity;
 
     transform-origin: center bottom;
-    animation-range: 20% 60%;
+    animation-range: 70% 100%;
 }
 
 

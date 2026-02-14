@@ -13,6 +13,8 @@
     gap: 0px;
     max-width: 1640px;
     width: 100%;
+    position: relative;
+    z-index: 3;
 }
 
 
