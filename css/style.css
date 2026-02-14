@@ -5,11 +5,15 @@ html {
 }
 
 :root {
-   --distExtra: 0px
+   --distExtra: 0px;
+   overflow-x: hidden;
 }
 
 
+
+
 body{
+
 
     height: 100vh; /* só pra permitir rolar */
    margin:0;
@@ -68,6 +72,27 @@ body{
   }
   .conteinerHome > button > img {
     height: 35px;
+  }
+
+  /* Div que desaparece com o scroll */
+  .scroll-escondido {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition: opacity 0.4s ease, visibility 0.4s ease;
+  }
+
+  /* Div que aparece com o scroll (fica escondida no topo) */
+  .scroll-visivel {
+    opacity: 1;
+    visibility: visible;
+    transition: opacity 0.4s ease, visibility 0.4s ease;
+  }
+
+  .scroll-visivel.inicial {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
   }
   
   

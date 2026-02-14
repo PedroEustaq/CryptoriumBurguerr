@@ -1,11 +1,18 @@
 .GrandaoBisteca {
     height: 6000px;
-    background-color: brown;
+    background-image: linear-gradient(#262626 1px, transparent 1px), linear-gradient(90deg, #262626 1px, transparent 1px);
+    background-size: 80px 80px;
+    background-color: #000000;
     width: 100%;
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
+    animation: mexerBack 20s linear infinite;
+
+max-width: 1440px;
 }
+
+
 
 * {
     padding: 0px;
@@ -16,42 +23,55 @@
 .RolarAmburguer {
     width: 50%;
     position: sticky;
-    background-color: rgb(255, 22, 22);
+    background-color: rgba(0, 0, 0, 0);
     top: 0px;
     height: 500px;
     display: flex;
     align-items: center;
     justify-content: center;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.437);
 
 }
 
 @keyframes desceAmborg {
     0% {
-scale: 0.1;
+        scale: 0.1;
     }
+
     100% {
-scale: 1;
+        scale: 1;
     }
-    
+
 }
+
 @keyframes flexDoBurgao {
     0% {
         transform: translateX(-800px) translateY(-50px);
         scale: 1;
         opacity: 0;
     }
+
     10% {
         opacity: 1;
+        filter: blur(0px);
     }
+    65% {
+        filter: blur(0px);
+        opacity: 1;
+    }
+
     100% {
         opacity: 1;
         transform: translateX(800px) translateY(50px);
         scale: 2;
+        filter: blur(10px);
     }
-    
+
 }
 
-.RolarAmburguer > div:nth-child(1) {
+.RolarAmburguer>div>img {}
+
+.RolarAmburguer>div:nth-child(1) {
     animation: flexDoBurgao linear;
     animation-timeline: scroll();
     height: 70%;
@@ -60,12 +80,12 @@ scale: 1;
     align-items: center;
     opacity: 0;
     position: absolute;
-      /* ponto de rotação fica bem longe, criando o movimento circular */
+    /* ponto de rotação fica bem longe, criando o movimento circular */
     will-change: transform, opacity;
     animation-range: 30% 80%;
 }
 
-.RolarAmburguer > div:nth-child(2) {
+.RolarAmburguer>div:nth-child(2) {
     animation: flexDoBurgao linear;
     animation-timeline: scroll();
     position: absolute;
@@ -75,12 +95,12 @@ scale: 1;
     justify-content: center;
     align-items: center;
 
-      /* ponto de rotação fica bem longe, criando o movimento circular */
+    /* ponto de rotação fica bem longe, criando o movimento circular */
     will-change: transform, opacity;
     animation-range: 55% 90%;
 }
 
-.RolarAmburguer > div:nth-child(3) {
+.RolarAmburguer>div:nth-child(3) {
     opacity: 0;
     animation: flexDoBurgao linear;
     animation-timeline: scroll();
@@ -90,40 +110,49 @@ scale: 1;
     justify-content: center;
     align-items: center;
 
-      /* ponto de rotação fica bem longe, criando o movimento circular */
+    /* ponto de rotação fica bem longe, criando o movimento circular */
     will-change: transform, opacity;
     animation-range: 65% 100%;
 }
 
-.RolarAmburguer > div > img {
+.RolarAmburguer>div>img {
     height: 100%;
 }
+
 .Anuncio {
     width: 50%;
     position: sticky;
-    height: 1000px;
+    height: 15%;
     top: 0;
-    align-self: flex-start;
-    background: linear-gradient(165deg, #1f1f1f 0%, #2a2a2a 50%, #252525 100%);
+    background-color: #00000000;
+
+    /* From https://css.glass */
+    background: rgba(255, 255, 255, 0.078);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.02);
+
+    #background: linear-gradient(165deg, #1f1f1f 0%, #2a2a2a 50%, #252525 100%);
     display: flex;
     flex-flow: column nowrap;
     justify-content: center;
     align-items: flex-start;
     padding: 2rem 2.5rem;
-    border-radius: 24px;
-    margin: 0 1rem;
+    border-radius: 0px;
+    margin: 0 0rem;
+    border-left: 1px solid rgba(255, 255, 255, 0.353);
     box-shadow:
         0 4px 24px rgba(0, 0, 0, 0.4),
         0 0 0 1px rgba(255, 255, 255, 0.06) inset;
 }
 
-.Anuncio > p {
+.Anuncio>p {
     font-size: xx-large;
     font-weight: 800;
     text-align: left;
     color: #f0f0f0;
     line-height: 1.25;
-    max-width: 90%;
+    max-width: 100%;
     letter-spacing: -0.02em;
     text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
 }
@@ -132,6 +161,7 @@ scale: 1;
 .DivPreco {
     width: 100%;
     display: flex;
+    max-height: 200px;
     flex-flow: row nowrap;
     justify-content: space-evenly;
     align-items: center;
@@ -141,16 +171,14 @@ scale: 1;
     padding: 16px 32px;
     border-radius: 999px;
     min-width: 160px;
-    background: linear-gradient(135deg, #22c55e 0%, #16a34a 100%);
+    background: linear-gradient(135deg, #22c55e00 0%, #16a34a00 100%);
     border: none;
     color: #fff;
     font-size: 1rem;
     font-weight: 700;
     letter-spacing: 0.03em;
     cursor: pointer;
-    box-shadow:
-        0 4px 14px rgba(34, 197, 94, 0.4),
-        0 0 0 1px rgba(255, 255, 255, 0.15) inset;
+    border: 1px solid green;
     transition: transform 0.2s ease, box-shadow 0.2s ease, filter 0.2s ease;
 }
 
@@ -203,8 +231,9 @@ scale: 1;
     transform-origin: center bottom;
     animation-range: 45% 70%;
 }
+
 .Anuncio>img:nth-child(1) {
-opacity: 0;
+    opacity: 0;
     animation: cair 700ms ease-out forwards;
     animation-timeline: scroll();
     position: absolute;
@@ -234,4 +263,77 @@ opacity: 0;
         transform: perspective(800px) rotateX(-90deg);
         opacity: 1;
     }
+}
+
+.ComentariosFofos {
+    position: absolute;
+    transform: translateY(380px);
+    background-color: #000000b9;
+    width: 100%;
+    height: 100px;
+}
+
+.comentario1 {
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.comentario1>p {
+    font-size: 35px;
+    font-weight: 600;
+}
+
+@keyframes emojiPulando {
+    0%, 100% {
+        transform: translateY(0) scale(1);
+    }
+    25% {
+        transform: translateY(-12px) scale(1.08);
+    }
+    50% {
+        transform: translateY(0) scale(1);
+    }
+    75% {
+        transform: translateY(-6px) scale(1.04);
+    }
+}
+
+.comentario1>img {
+    height: 100%;
+    animation: emojiPulando 1.2s ease-in-out infinite;
+}
+
+.comentario1>img:nth-child(1) { animation-delay: 0s; }
+.comentario1>img:nth-child(2) { animation-delay: 0.15s; }
+.comentario1>img:nth-child(3) { animation-delay: 0.3s; }
+.comentario1>img:nth-child(4) { animation-delay: 0.45s; }
+.comentario1>img:nth-child(5) { animation-delay: 0.6s; }
+
+.comentario2 {
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.comentario2>p {
+    font-size: 35px;
+    font-weight: 600;
+}
+
+.comentario2>img {
+    height: 100%;
+}
+
+.escondido {
+
+    display: none;
 }

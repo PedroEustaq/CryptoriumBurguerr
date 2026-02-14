@@ -1,5 +1,5 @@
 body {
-    background-image: url('./bloquinPreto.png');
+    background-image: url('../img/bloquinPreto.png');
     height: 100vh;
     width: 100vw;
     animation: mexerBack 20s linear infinite;
