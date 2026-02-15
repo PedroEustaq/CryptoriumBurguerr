@@ -1,5 +1,5 @@
 .GrandaoBisteca {
-    height: 6000px;
+    min-height: 6000px;
     background-image: linear-gradient(#262626 1px, transparent 1px), linear-gradient(90deg, #262626 1px, transparent 1px);
     background-size: 80px 80px;
     background-color: #000000;
@@ -9,7 +9,7 @@
     flex-wrap: nowrap;
     animation: mexerBack 20s linear infinite;
 
-max-width: 1550px;
+    max-width: 1550px;
 }
 
 
@@ -55,16 +55,27 @@ max-width: 1550px;
         opacity: 1;
         filter: blur(0px);
     }
-    65% {
-        filter: blur(0px);
+
+    60% {
         opacity: 1;
     }
 
-    100% {
+    65% {
+        filter: blur(0px);
         opacity: 1;
+
+    }
+
+    80% {
+        opacity: 0;
+    }
+
+    100% {
+
+        opacity: 0;
         transform: translateX(800px) translateY(50px);
         scale: 2;
-        filter: blur(10px);
+        filter: blur(10px) grayscale(100%);
     }
 
 }
@@ -146,15 +157,78 @@ max-width: 1550px;
         0 0 0 1px rgba(255, 255, 255, 0.06) inset;
 }
 
-.Anuncio>p {
-    font-size: xx-large;
+.carta {}
+
+.carta>p,
+.carta-textos p {
+    font-size: 1.5vw;
     font-weight: 800;
     text-align: left;
+    padding: 15px;
     color: #f0f0f0;
     line-height: 1.25;
+    border: 1px solid white;
     max-width: 100%;
+    height: 40%;
     letter-spacing: -0.02em;
     text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+/* Troca de texto no scroll: dois textos, animamos opacidade (content não é animável) */
+.carta-textos {
+    position: relative;
+    width: 100%;
+    height: 120px;
+}
+
+.carta-textos p {
+    margin: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    box-sizing: border-box;
+    height: 120px;
+}
+
+.carta-textos .texto-inicial {
+    opacity: 1;
+    animation: texto-sai linear forwards;
+    animation-timeline: scroll();
+    animation-range: 0% 90%;
+}
+
+.carta-textos .texto-scroll {
+    opacity: 0;
+    animation: texto-entra linear forwards;
+    animation-timeline: scroll();
+    animation-range: 40% 75%;
+}
+
+@keyframes texto-sai {
+
+    0%,
+    60% {
+        opacity: 1;
+    }
+
+    82%,
+    100% {
+        opacity: 0;
+    }
+}
+
+@keyframes texto-entra {
+
+    0%,
+    60% {
+        opacity: 0;
+    }
+
+    82%,
+    100% {
+        opacity: 1;
+    }
 }
 
 .Anuncio::before {
@@ -167,6 +241,7 @@ max-width: 1550px;
     background: linear-gradient(90deg, transparent, rgba(34, 197, 94, 0.6), rgba(234, 179, 8, 0.5), transparent);
     opacity: 0.9;
 }
+
 .Anuncio::after {
     content: "Aceitamos R$";
     position: absolute;
@@ -179,27 +254,47 @@ max-width: 1550px;
     color: rgba(34, 197, 94, 0.9);
     opacity: 0.95;
 }
-.DivPreco {
+
+.carta {
+    background-color: #00000000;
     width: 100%;
+    height: 35%;
+
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: flex-start;
+}
+
+.espacoPraLogos {
+    height: 100px;
+    background-color: #ffffff29;
+    border: 1px solid white;
+}
+
+.DivPreco {
+    width: 30%;
     display: flex;
     max-height: 200px;
+    height: 20%;
     flex-flow: row nowrap;
     justify-content: space-evenly;
     align-items: center;
 }
 
 .buttonPreco {
-    padding: 16px 32px;
-    border-radius: 999px;
-    min-width: 160px;
-    background: linear-gradient(135deg, #22c55e00 0%, #16a34a00 100%);
-    border: none;
+    padding: 0px 0px;
+    margin-top: 10px;
+    border-radius: 0px;
+    # min-width: 160px;
+    background: linear-gradient(135deg, #00ff5e 0%, #00ff5e 100%);
     color: #fff;
-    font-size: 1rem;
+    font-size: 1.5rem;
+    height: 100%;
+    width: 100%;
     font-weight: 700;
     letter-spacing: 0.03em;
     cursor: pointer;
-    border: 1px solid green;
+    border: 1px solid rgb(255, 255, 255);
     transition: transform 0.2s ease, box-shadow 0.2s ease, filter 0.2s ease;
 }
 
@@ -217,7 +312,7 @@ max-width: 1550px;
 }
 
 .DivPreco>img {
-    height: 70%;
+    height: 20%;
 }
 
 .Anuncio>img:nth-child(2) {
@@ -310,15 +405,20 @@ max-width: 1550px;
 }
 
 @keyframes emojiPulando {
-    0%, 100% {
+
+    0%,
+    100% {
         transform: translateY(0) scale(1);
     }
+
     25% {
         transform: translateY(-12px) scale(1.08);
     }
+
     50% {
         transform: translateY(0) scale(1);
     }
+
     75% {
         transform: translateY(-6px) scale(1.04);
     }
@@ -329,11 +429,25 @@ max-width: 1550px;
     animation: emojiPulando 1.2s ease-in-out infinite;
 }
 
-.comentario1>img:nth-child(1) { animation-delay: 0s; }
-.comentario1>img:nth-child(2) { animation-delay: 0.15s; }
-.comentario1>img:nth-child(3) { animation-delay: 0.3s; }
-.comentario1>img:nth-child(4) { animation-delay: 0.45s; }
-.comentario1>img:nth-child(5) { animation-delay: 0.6s; }
+.comentario1>img:nth-child(1) {
+    animation-delay: 0s;
+}
+
+.comentario1>img:nth-child(2) {
+    animation-delay: 0.15s;
+}
+
+.comentario1>img:nth-child(3) {
+    animation-delay: 0.3s;
+}
+
+.comentario1>img:nth-child(4) {
+    animation-delay: 0.45s;
+}
+
+.comentario1>img:nth-child(5) {
+    animation-delay: 0.6s;
+}
 
 .comentario2 {
     height: 100%;

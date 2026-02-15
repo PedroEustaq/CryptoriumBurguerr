@@ -19,13 +19,18 @@ body{
    margin:0;
    background-color: #000000;
    font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+
+   display: flex;
+   flex-flow: column nowrap;
+   justify-content: flex-start;
+   align-items: center;
  }
   
   /* barra de progresso do scroll (timeline via scroll()) */
 
   .LandingHome {
     width: 100%;
-    height: 1440px;
+    min-height: 900px;   /* garante que não encolhe */    /* não encolhe dentro do flex do body */
     display: flex;
     justify-content: center;
     align-items: flex-start;
