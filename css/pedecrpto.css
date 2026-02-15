@@ -11,7 +11,7 @@
     align-items: center;
     justify-content: center;
     gap: 0px;
-    max-width: 1640px;
+    max-width: 1500px;
     width: 100%;
     position: relative;
     z-index: 3;
@@ -118,6 +118,7 @@
 .crypto-forno {
     width: 50%;
     height: 100%;
+    overflow: hidden;
 }
 
 

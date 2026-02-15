@@ -138,39 +138,102 @@
         </section>
 
     </section>
-    <section class="GrandaoBisteca">
-        <section class="RolarAmburguer" aria-hidden="true">
+    <section class="GrandaoBisteca" id="grandao-bisteca">
+        <div class="GrandaoBisteca-sticky-wrap">
+            <div class="GrandaoBisteca-progress" aria-hidden="true">
+                <div class="GrandaoBisteca-progress-bar" id="grandao-progress-bar"></div>
+            </div>
+            <h2 class="GrandaoBisteca-titulo">Cardápio</h2>
+            <p class="GrandaoBisteca-subtitulo">Role para conhecer cada um</p>
 
-            <div class="burguerTeste"><img src="img/bitcoinburguer.png" alt="Bitcoin Burger"></div>
-            <div class="burguerTeste"><img src="img/classicburguer.png" alt="Bitcoin Burger"></div>
-            <div class="burguerTeste"><img src="img/onionburguer.png" alt="Bitcoin Burger"></div>
-            <div class="ComentariosFofos">
-                <div class="comentario1">
-                    <img src="gifs/finalmente.webp" alt="">
-                    <img src="gifs/felizin.webp" alt=""><img src="gifs/conCORDO.webp" alt="">
-                    <img src="gifs/amor.webp" alt="">
-                    <img src="gifs/olhar.webp" alt="">
+            <div class="GrandaoBisteca-layout">
+            <div class="GrandaoBisteca-slides">
+                <div class="slide-panel">
+                    <div class="slide-item" data-slide="0">
+                        <div class="slide-img-wrap"><img src="img/bitcoinburguer.png" alt="Bitcoin Burger"></div>
+                        <span class="slide-nome">Bitcoin Burger</span>
+                    </div>
+                    <div class="slide-item" data-slide="1">
+                        <div class="slide-img-wrap"><img src="img/chesseburguer.png" alt="Cheese Burger"></div>
+                        <span class="slide-nome">Cheese Burger</span>
+                    </div>
+                    <div class="slide-item" data-slide="2">
+                        <div class="slide-img-wrap"><img src="img/classicburguer.png" alt="Classic Burger"></div>
+                        <span class="slide-nome">Classic</span>
+                    </div>
+                    <div class="slide-item" data-slide="3">
+                        <div class="slide-img-wrap"><img src="img/onionburguer.png" alt="Onion Burger"></div>
+                        <span class="slide-nome">Onion</span>
+                    </div>
+                    <div class="slide-item" data-slide="4">
+                        <div class="slide-img-wrap"><img src="img/strangeburguer.png" alt="Strange Burger"></div>
+                        <span class="slide-nome">Strange</span>
+                    </div>
+                </div>
+
+                <div class="slide-indicadores" aria-hidden="true">
+                    <span class="slide-dot" data-dot="0"></span>
+                    <span class="slide-dot" data-dot="1"></span>
+                    <span class="slide-dot" data-dot="2"></span>
+                    <span class="slide-dot" data-dot="3"></span>
+                    <span class="slide-dot" data-dot="4"></span>
+                </div>
+
+                <div class="ComentariosFofos">
+                    <div class="comentario1">
+                        <img src="gifs/finalmente.webp" alt="">
+                        <img src="gifs/felizin.webp" alt="">
+                        <img src="gifs/conCORDO.webp" alt="">
+                        <img src="gifs/amor.webp" alt="">
+                        <img src="gifs/olhar.webp" alt="">
+                    </div>
                 </div>
             </div>
-        </section>
 
-
-
-        <div class="Anuncio">
-            <img src="img/etherLogo.png" alt="">
-            <img src="img/SolAna.png" alt="">
-            <img src="img/bitcoinLogo.png" alt="">
-            <div class="carta">
-                <div class="carta-textos">
-                    <p class="texto-inicial">Hambúrguer artesanal suculento com bacon crocante e queijo derretido, finalizado com molho cremoso que realça cada mordida.</p>
-                    <p class="texto-scroll">O sabor que vale mais que um bitcoin. Experimente o Grandão Bisteca — crocante por fora, suculento por dentro.</p>
+            <div class="Anuncio">
+                <img src="img/etherLogo.png" alt="">
+                <img src="img/SolAna.png" alt="">
+                <img src="img/bitcoinLogo.png" alt="">
+                <div class="carta">
+                    <div class="carta-textos">
+                        <ul class="carta-ingredientes" data-text="0" aria-label="Ingredientes Bitcoin Burger">
+                            <li><span class="carta-icone" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M12 2C8 2 6 5 6 8c0 4 2 6 6 10 4-4 6-6 6-10 0-3-2-6-6-6z"/></svg></span> Carne premium</li>
+                            <li><span class="carta-icone" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="4" y="6" width="16" height="12" rx="1"/><path d="M4 10h16M4 14h16"/></svg></span> Queijo cheddar</li>
+                            <li><span class="carta-icone" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 12h16M4 8h16M4 16h16"/><ellipse cx="12" cy="12" rx="10" ry="4"/></svg></span> Pão brioche</li>
+                            <li><span class="carta-icone" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/><circle cx="12" cy="12" r="3"/></svg></span> Molho especial</li>
+                        </ul>
+                        <ul class="carta-ingredientes" data-text="1" aria-label="Ingredientes Cheese Burger">
+                            <li><span class="carta-icone" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="4" y="6" width="16" height="12" rx="1"/><path d="M4 10h16M4 14h16"/></svg></span> Queijo derretido (triplo)</li>
+                            <li><span class="carta-icone" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2C8 2 6 5 6 8c0 4 2 6 6 10 4-4 6-6 6-10 0-3-2-6-6-6z"/></svg></span> Blend artesanal</li>
+                            <li><span class="carta-icone" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 12h16M4 8h16M4 16h16"/><ellipse cx="12" cy="12" rx="10" ry="4"/></svg></span> Pão tipo brioche</li>
+                            <li><span class="carta-icone" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/><circle cx="12" cy="12" r="3"/></svg></span> Molho cremoso</li>
+                        </ul>
+                        <ul class="carta-ingredientes" data-text="2" aria-label="Ingredientes Classic">
+                            <li><span class="carta-icone" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2C8 2 6 5 6 8c0 4 2 6 6 10 4-4 6-6 6-10 0-3-2-6-6-6z"/></svg></span> Blend artesanal</li>
+                            <li><span class="carta-icone" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 12h16M4 8h16M4 16h16"/><ellipse cx="12" cy="12" rx="10" ry="4"/></svg></span> Pão brioche</li>
+                            <li><span class="carta-icone" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="4"/><path d="M8 12h8M12 8v8"/></svg></span> Pickles</li>
+                            <li><span class="carta-icone" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/></svg></span> Molho da casa</li>
+                        </ul>
+                        <ul class="carta-ingredientes" data-text="3" aria-label="Ingredientes Onion">
+                            <li><span class="carta-icone" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="6"/><path d="M12 6v12M6 12h12"/><circle cx="12" cy="12" r="2"/></svg></span> Cebola caramelizada</li>
+                            <li><span class="carta-icone" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4"/><path d="M4 8l4 4-4 4M20 8l-4 4 4 4"/></svg></span> Molho barbecue</li>
+                            <li><span class="carta-icone" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2C8 2 6 5 6 8c0 4 2 6 6 10 4-4 6-6 6-10 0-3-2-6-6-6z"/></svg></span> Carne premium</li>
+                            <li><span class="carta-icone" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 12h16M4 8h16M4 16h16"/><ellipse cx="12" cy="12" rx="10" ry="4"/></svg></span> Pão tostado</li>
+                        </ul>
+                        <ul class="carta-ingredientes" data-text="4" aria-label="Ingredientes Strange">
+                            <li><span class="carta-icone" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2L14 8l6 1-4 4 1 6-5-3-5 3 1-6-4-4 6-1z"/></svg></span> Ingrediente surpresa</li>
+                            <li><span class="carta-icone" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2C8 2 6 5 6 8c0 4 2 6 6 10 4-4 6-6 6-10 0-3-2-6-6-6z"/></svg></span> Blend especial</li>
+                            <li><span class="carta-icone" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4"/></svg></span> Molho secreto</li>
+                            <li><span class="carta-icone" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 12h16M4 8h16M4 16h16"/><ellipse cx="12" cy="12" rx="10" ry="4"/></svg></span> Pão especial</li>
+                        </ul>
+                    </div>
+                    <div class="DivPreco">
+                        <button class="buttonPreco">Peça já</button>
+                    </div>
                 </div>
-                <div class="DivPreco">
-                    <button class="buttonPreco">Peça já</button>
-                </div>
+            </div>
             </div>
         </div>
-
     </section>
 
     <main class="crypto-layout">
@@ -342,14 +405,34 @@
         h1Reveal.style.setProperty('--scroll-progress', progress);
     }
 
+    const sectionGrandao = document.getElementById('grandao-bisteca');
+    const TOTAL_SLIDES = 5;
+
+    function updateGrandaoSlide() {
+        if (!sectionGrandao) return;
+        const rect = sectionGrandao.getBoundingClientRect();
+        const sectionHeight = sectionGrandao.offsetHeight;
+        const vh = window.innerHeight;
+        const progress = Math.max(0, Math.min(1, (vh - rect.top) / (vh + sectionHeight)));
+        const index = Math.min(TOTAL_SLIDES - 1, Math.floor(progress * TOTAL_SLIDES));
+        sectionGrandao.classList.remove('slide-0', 'slide-1', 'slide-2', 'slide-3', 'slide-4');
+        sectionGrandao.classList.add('slide-' + index);
+        const bar = document.getElementById('grandao-progress-bar');
+        if (bar) bar.style.width = (progress * 100) + '%';
+    }
+
     function raf(time) {
         lenis.raf(time);
         updateScrollReveal();
+        updateGrandaoSlide();
         requestAnimationFrame(raf);
     }
 
     requestAnimationFrame(raf);
-    window.addEventListener('resize', updateScrollReveal);
+    window.addEventListener('resize', function() {
+        updateScrollReveal();
+        updateGrandaoSlide();
+    });
 
 
 

@@ -1,234 +1,224 @@
+/* ========== GRANDÃO BISTECA – Slide com scroll + position sticky ========== */
+.GrandaoBisteca * {
+    box-sizing: border-box;
+}
+
 .GrandaoBisteca {
-    min-height: 6000px;
-    background-image: linear-gradient(#262626 1px, transparent 1px), linear-gradient(90deg, #262626 1px, transparent 1px);
-    background-size: 80px 80px;
-    background-color: #000000;
+    min-height: 500vh;
+    background-color: #0a0a0a;
+    background-image:
+        linear-gradient(rgba(45, 45, 45, 0.5) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(45, 45, 45, 0.5) 1px, transparent 1px);
+    background-size: 56px 56px;
     width: 100%;
+    max-width: 1500px;
+    margin: 0 auto;
+    position: relative;
+}
+
+/* Wrapper único sticky: acompanha o scroll durante toda a seção (500vh) */
+.GrandaoBisteca-sticky-wrap {
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    z-index: 1;
+}
+
+/* Barra de progresso – dentro do wrap, no topo */
+.GrandaoBisteca-progress {
+    flex-shrink: 0;
+    z-index: 12;
+    height: 4px;
+    background: rgba(255, 255, 255, 0.06);
+    width: 100%;
+}
+
+.GrandaoBisteca-progress-bar {
+    height: 100%;
+    width: 0%;
+    background: linear-gradient(90deg, rgba(255, 200, 80, 0.95), rgba(34, 197, 94, 0.85));
+    border-radius: 0 3px 3px 0;
+    transition: width 0.12s ease;
+}
+
+/* Título e subtítulo */
+.GrandaoBisteca-titulo {
+    flex-shrink: 0;
+    z-index: 10;
+    margin: 0;
+    padding: 1.25rem 1rem 0.4rem;
+    font-size: clamp(1.4rem, 3.2vw, 2.25rem);
+    font-weight: 800;
+    color: #fff;
+    text-align: center;
+    letter-spacing: -0.03em;
+    text-shadow: 0 2px 24px rgba(0, 0, 0, 0.6);
+    background: linear-gradient(180deg, #0a0a0a 0%, transparent 85%);
+}
+
+.GrandaoBisteca-subtitulo {
+    flex-shrink: 0;
+    z-index: 10;
+    margin: 0;
+    padding: 0 1rem 0.8rem;
+    font-size: clamp(0.8rem, 1.4vw, 0.95rem);
+    font-weight: 500;
+    color: rgba(255, 255, 255, 0.55);
+    text-align: center;
+}
+
+/* Layout: duas colunas que preenchem o espaço restante do wrap */
+.GrandaoBisteca-layout {
     display: flex;
     flex-direction: row;
-    flex-wrap: nowrap;
-    animation: mexerBack 20s linear infinite;
-
-    max-width: 1550px;
+    width: 100%;
+    flex: 1;
+    min-height: 0;
 }
 
-
-
-* {
-    padding: 0px;
-    margin: 0px;
-}
-
-
-.RolarAmburguer {
-    width: 50%;
-    position: sticky;
-    background-color: rgba(0, 0, 0, 0);
-    top: 0px;
-    height: 500px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.437);
-
-}
-
-@keyframes desceAmborg {
-    0% {
-        scale: 0.1;
-    }
-
-    100% {
-        scale: 1;
-    }
-
-}
-
-@keyframes flexDoBurgao {
-    0% {
-        transform: translateX(-800px) translateY(-50px);
-        scale: 1;
-        opacity: 0;
-    }
-
-    10% {
-        opacity: 1;
-        filter: blur(0px);
-    }
-
-    60% {
-        opacity: 1;
-    }
-
-    65% {
-        filter: blur(0px);
-        opacity: 1;
-
-    }
-
-    80% {
-        opacity: 0;
-    }
-
-    100% {
-
-        opacity: 0;
-        transform: translateX(800px) translateY(50px);
-        scale: 2;
-        filter: blur(10px) grayscale(100%);
-    }
-
-}
-
-.RolarAmburguer>div>img {}
-
-.RolarAmburguer>div:nth-child(1) {
-    animation: flexDoBurgao linear;
-    animation-timeline: scroll();
-    height: 70%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    opacity: 0;
-    position: absolute;
-    /* ponto de rotação fica bem longe, criando o movimento circular */
-    will-change: transform, opacity;
-    animation-range: 30% 80%;
-}
-
-.RolarAmburguer>div:nth-child(2) {
-    animation: flexDoBurgao linear;
-    animation-timeline: scroll();
-    position: absolute;
-    opacity: 0;
-    height: 70%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    /* ponto de rotação fica bem longe, criando o movimento circular */
-    will-change: transform, opacity;
-    animation-range: 55% 90%;
-}
-
-.RolarAmburguer>div:nth-child(3) {
-    opacity: 0;
-    animation: flexDoBurgao linear;
-    animation-timeline: scroll();
-    position: absolute;
-    height: 70%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    /* ponto de rotação fica bem longe, criando o movimento circular */
-    will-change: transform, opacity;
-    animation-range: 65% 100%;
-}
-
-.RolarAmburguer>div>img {
+/* ========== Coluna esquerda – slides ========== */
+.GrandaoBisteca-slides {
+    width: 55%;
     height: 100%;
-}
-
-.Anuncio {
-    width: 50%;
-    position: sticky;
-    height: 15%;
-    top: 0;
-    background-color: #00000000;
-
-    /* From https://css.glass */
-    background: rgba(255, 255, 255, 0.078);
-    border-radius: 16px;
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-    border: 1px solid rgba(255, 255, 255, 0.02);
-
-    #background: linear-gradient(165deg, #1f1f1f 0%, #2a2a2a 50%, #252525 100%);
     display: flex;
-    flex-flow: column nowrap;
+    flex-direction: column;
+    align-items: center;
     justify-content: center;
-    align-items: flex-start;
-    padding: 2rem 2.5rem;
-    border-radius: 0px;
-    margin: 0 0rem;
-    border-left: 1px solid rgba(255, 255, 255, 0.353);
-    box-shadow:
-        0 4px 24px rgba(0, 0, 0, 0.4),
-        0 0 0 1px rgba(255, 255, 255, 0.06) inset;
+    border-right: 1px solid rgba(255, 255, 255, 0.07);
+    overflow: hidden;
 }
 
-.carta {}
-
-.carta>p,
-.carta-textos p {
-    font-size: 1.5vw;
-    font-weight: 800;
-    text-align: left;
-    padding: 15px;
-    color: #f0f0f0;
-    line-height: 1.25;
-    border: 1px solid white;
-    max-width: 100%;
-    height: 40%;
-    letter-spacing: -0.02em;
-    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
-}
-
-/* Troca de texto no scroll: dois textos, animamos opacidade (content não é animável) */
-.carta-textos {
+.slide-panel {
     position: relative;
     width: 100%;
-    height: 120px;
+    height: 72%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 1;
 }
 
-.carta-textos p {
-    margin: 0;
+.slide-item {
     position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    box-sizing: border-box;
-    height: 120px;
-}
-
-.carta-textos .texto-inicial {
-    opacity: 1;
-    animation: texto-sai linear forwards;
-    animation-timeline: scroll();
-    animation-range: 0% 90%;
-}
-
-.carta-textos .texto-scroll {
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     opacity: 0;
-    animation: texto-entra linear forwards;
-    animation-timeline: scroll();
-    animation-range: 40% 75%;
+    transform: scale(0.9) translateX(60px);
+    filter: blur(8px);
+    transition: opacity 0.5s ease, transform 0.5s ease, filter 0.5s ease;
+    pointer-events: none;
 }
 
-@keyframes texto-sai {
-
-    0%,
-    60% {
-        opacity: 1;
-    }
-
-    82%,
-    100% {
-        opacity: 0;
-    }
+.GrandaoBisteca.slide-0 .slide-item[data-slide="0"],
+.GrandaoBisteca.slide-1 .slide-item[data-slide="1"],
+.GrandaoBisteca.slide-2 .slide-item[data-slide="2"],
+.GrandaoBisteca.slide-3 .slide-item[data-slide="3"],
+.GrandaoBisteca.slide-4 .slide-item[data-slide="4"] {
+    opacity: 1;
+    transform: scale(1.06) translateX(0);
+    filter: blur(0) drop-shadow(0 24px 48px rgba(255, 180, 50, 0.18));
+    pointer-events: auto;
+    z-index: 1;
 }
 
-@keyframes texto-entra {
+.slide-img-wrap {
+    height: 100%;
+    max-height: 450px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 
-    0%,
-    60% {
-        opacity: 0;
-    }
+.slide-item img {
+    height: 100%;
+    width: auto;
+    object-fit: contain;
+}
 
-    82%,
-    100% {
-        opacity: 1;
-    }
+.slide-nome {
+    margin-top: 0.6rem;
+    font-size: clamp(1rem, 1.9vw, 1.4rem);
+    font-weight: 700;
+    color: rgba(255, 255, 255, 0.95);
+    text-shadow: 0 2px 12px rgba(0, 0, 0, 0.45);
+}
+
+/* Indicadores */
+.slide-indicadores {
+    display: flex;
+    gap: 0.5rem;
+    padding: 0.9rem;
+    z-index: 5;
+}
+
+.slide-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.22);
+    transition: transform 0.3s ease, background 0.3s ease, box-shadow 0.3s ease;
+}
+
+.GrandaoBisteca.slide-0 .slide-dot[data-dot="0"],
+.GrandaoBisteca.slide-1 .slide-dot[data-dot="1"],
+.GrandaoBisteca.slide-2 .slide-dot[data-dot="2"],
+.GrandaoBisteca.slide-3 .slide-dot[data-dot="3"],
+.GrandaoBisteca.slide-4 .slide-dot[data-dot="4"] {
+    background: rgba(255, 200, 80, 0.95);
+    transform: scale(1.35);
+    box-shadow: 0 0 18px rgba(255, 180, 50, 0.5);
+}
+
+/* Comentários emojis */
+.ComentariosFofos {
+    width: 100%;
+    padding: 0.6rem;
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.5) 0%, transparent 100%);
+    z-index: 5;
+}
+
+.comentario1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.4rem;
+}
+
+.comentario1 img {
+    height: 34px;
+    width: auto;
+    animation: emojiPulando 1.2s ease-in-out infinite;
+}
+
+.comentario1 img:nth-child(1) { animation-delay: 0s; }
+.comentario1 img:nth-child(2) { animation-delay: 0.15s; }
+.comentario1 img:nth-child(3) { animation-delay: 0.3s; }
+.comentario1 img:nth-child(4) { animation-delay: 0.45s; }
+.comentario1 img:nth-child(5) { animation-delay: 0.6s; }
+
+@keyframes emojiPulando {
+    0%, 100% { transform: translateY(0) scale(1); }
+    50% { transform: translateY(-8px) scale(1.08); }
+}
+
+/* ========== Coluna direita – Anúncio ========== */
+.GrandaoBisteca .Anuncio {
+    width: 45%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: stretch;
+    padding: 2rem;
+    background: rgba(255, 255, 255, 0.025);
+    border-left: 1px solid rgba(255, 255, 255, 0.06);
+    box-shadow: -10px 0 40px rgba(0, 0, 0, 0.25);
 }
 
 .Anuncio::before {
@@ -238,237 +228,147 @@
     left: 0;
     right: 0;
     height: 3px;
-    background: linear-gradient(90deg, transparent, rgba(34, 197, 94, 0.6), rgba(234, 179, 8, 0.5), transparent);
-    opacity: 0.9;
+    background: linear-gradient(90deg, transparent, rgba(34, 197, 94, 0.5), rgba(234, 179, 8, 0.5), transparent);
 }
 
 .Anuncio::after {
     content: "Aceitamos R$";
     position: absolute;
-    top: 0.75rem;
-    right: 1.25rem;
+    top: 1rem;
+    right: 1.5rem;
     font-size: 0.7rem;
     font-weight: 700;
     letter-spacing: 0.12em;
     text-transform: uppercase;
     color: rgba(34, 197, 94, 0.9);
-    opacity: 0.95;
+}
+
+.Anuncio > img:nth-child(1),
+.Anuncio > img:nth-child(2),
+.Anuncio > img:nth-child(3) {
+    position: absolute;
+    top: 1rem;
+    left: 1.5rem;
+    width: 30px;
+    height: auto;
+    opacity: 0.65;
 }
 
 .carta {
-    background-color: #00000000;
-    width: 100%;
-    height: 35%;
-
     display: flex;
-    flex-flow: column nowrap;
-    align-items: flex-start;
+    flex-direction: column;
+    gap: 1rem;
+    flex: 1;
+    justify-content: center;
 }
 
-.espacoPraLogos {
-    height: 100px;
-    background-color: #ffffff29;
-    border: 1px solid white;
+.carta-textos {
+    position: relative;
+    min-height: 200px;
+}
+
+.carta-ingredientes {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    margin: 0;
+    padding: 0.5rem 0;
+    list-style: none;
+    font-size: clamp(1rem, 1.5vw, 1.25rem);
+    font-weight: 500;
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.9);
+    letter-spacing: -0.01em;
+    opacity: 0;
+    transform: translateX(18px);
+    transition: opacity 0.45s ease, transform 0.45s ease;
+    pointer-events: none;
+}
+
+.GrandaoBisteca.slide-0 .carta-ingredientes[data-text="0"],
+.GrandaoBisteca.slide-1 .carta-ingredientes[data-text="1"],
+.GrandaoBisteca.slide-2 .carta-ingredientes[data-text="2"],
+.GrandaoBisteca.slide-3 .carta-ingredientes[data-text="3"],
+.GrandaoBisteca.slide-4 .carta-ingredientes[data-text="4"] {
+    opacity: 1;
+    transform: translateX(0);
+    pointer-events: auto;
+}
+
+.carta-ingredientes li {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.45rem 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.carta-ingredientes li:last-child {
+    border-bottom: none;
+}
+
+.carta-icone {
+    flex-shrink: 0;
+    width: 28px;
+    height: 28px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: rgba(255, 200, 80, 0.9);
+}
+
+.carta-icone svg {
+    width: 100%;
+    height: 100%;
 }
 
 .DivPreco {
-    width: 30%;
-    display: flex;
-    max-height: 200px;
-    height: 20%;
-    flex-flow: row nowrap;
-    justify-content: space-evenly;
-    align-items: center;
+    margin-top: auto;
+    padding-top: 0.8rem;
 }
 
 .buttonPreco {
-    padding: 0px 0px;
-    margin-top: 10px;
-    border-radius: 0px;
-    # min-width: 160px;
-    background: linear-gradient(135deg, #00ff5e 0%, #00ff5e 100%);
-    color: #fff;
-    font-size: 1.5rem;
-    height: 100%;
     width: 100%;
+    padding: 1rem 1.5rem;
+    font-size: 1.2rem;
     font-weight: 700;
-    letter-spacing: 0.03em;
+    color: #fff;
+    background: linear-gradient(135deg, #22c55e 0%, #16a34a 100%);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 8px;
     cursor: pointer;
-    border: 1px solid rgb(255, 255, 255);
     transition: transform 0.2s ease, box-shadow 0.2s ease, filter 0.2s ease;
 }
 
 .buttonPreco:hover {
     transform: translateY(-2px);
-    box-shadow:
-        0 6px 20px rgba(34, 197, 94, 0.5),
-        0 0 0 1px rgba(255, 255, 255, 0.2) inset;
+    box-shadow: 0 8px 28px rgba(34, 197, 94, 0.45);
     filter: brightness(1.08);
 }
 
 .buttonPreco:active {
     transform: translateY(0);
-    box-shadow: 0 2px 8px rgba(34, 197, 94, 0.35);
 }
 
-.DivPreco>img {
-    height: 20%;
-}
-
-.Anuncio>img:nth-child(2) {
-    animation: cair 700ms ease-out forwards;
-    animation-timeline: scroll();
-    position: absolute;
-    /* ponto de rotação fica bem longe, criando o movimento circular */
-
-    top: 50px;
-    left: 70px;
-    width: 70%;
-    opacity: 0;
-    will-change: transform, opacity;
-
-    transform-origin: center bottom;
-    animation-range: 60% 82%;
-    opacity: 0;
-}
-
-.Anuncio>img:nth-child(3) {
-
-    animation: cair 700ms ease-out forwards;
-    animation-timeline: scroll();
-    position: absolute;
-    /* ponto de rotação fica bem longe, criando o movimento circular */
-    top: 50px;
-    left: 70px;
-    width: 70%;
-    opacity: 0;
-    will-change: transform, opacity;
-
-    transform-origin: center bottom;
-    animation-range: 45% 70%;
-}
-
-.Anuncio>img:nth-child(1) {
-    opacity: 0;
-    animation: cair 700ms ease-out forwards;
-    animation-timeline: scroll();
-    position: absolute;
-    /* ponto de rotação fica bem longe, criando o movimento circular */
-    top: 50px;
-    left: 70px;
-    width: 70%;
-    will-change: transform, opacity;
-
-    transform-origin: center bottom;
-    animation-range: 70% 100%;
-}
-
-
-@keyframes cair {
-    0% {
-        transform: perspective(800px) rotateX(90deg);
-        opacity: 0;
+@media (max-width: 900px) {
+    .GrandaoBisteca-layout {
+        flex-direction: column;
     }
 
-    50% {
-        transform: perspective(800px) rotateX(0deg);
-        opacity: 1;
+    .GrandaoBisteca-slides {
+        width: 100%;
+        min-height: 55%;
+        border-right: none;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.07);
     }
 
-    100% {
-        transform: perspective(800px) rotateX(-90deg);
-        opacity: 1;
+    .GrandaoBisteca .Anuncio {
+        width: 100%;
+        min-height: 45%;
     }
-}
-
-.ComentariosFofos {
-    position: absolute;
-    transform: translateY(380px);
-    background-color: #000000b9;
-    width: 100%;
-    height: 100px;
-}
-
-.comentario1 {
-    height: 100%;
-    width: 100%;
-    background-color: rgba(0, 0, 0, 0);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-}
-
-.comentario1>p {
-    font-size: 35px;
-    font-weight: 600;
-}
-
-@keyframes emojiPulando {
-
-    0%,
-    100% {
-        transform: translateY(0) scale(1);
-    }
-
-    25% {
-        transform: translateY(-12px) scale(1.08);
-    }
-
-    50% {
-        transform: translateY(0) scale(1);
-    }
-
-    75% {
-        transform: translateY(-6px) scale(1.04);
-    }
-}
-
-.comentario1>img {
-    height: 100%;
-    animation: emojiPulando 1.2s ease-in-out infinite;
-}
-
-.comentario1>img:nth-child(1) {
-    animation-delay: 0s;
-}
-
-.comentario1>img:nth-child(2) {
-    animation-delay: 0.15s;
-}
-
-.comentario1>img:nth-child(3) {
-    animation-delay: 0.3s;
-}
-
-.comentario1>img:nth-child(4) {
-    animation-delay: 0.45s;
-}
-
-.comentario1>img:nth-child(5) {
-    animation-delay: 0.6s;
-}
-
-.comentario2 {
-    height: 100%;
-    width: 100%;
-    background-color: rgba(0, 0, 0, 0);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-}
-
-.comentario2>p {
-    font-size: 35px;
-    font-weight: 600;
-}
-
-.comentario2>img {
-    height: 100%;
 }
 
 .escondido {
-
     display: none;
 }
