@@ -15,6 +15,12 @@
     width: 100%;
     position: relative;
     z-index: 3;
+    transition: max-width 0.5s ease, width 0.5s ease;
+}
+
+.crypto-layout.expanded {
+    max-width: 100%;
+    width: 100%;
 }
 
 
@@ -34,6 +40,25 @@
     overflow: hidden;
     height: 100%;
     width: 50%;
+    transition: width 0.5s ease;
+}
+
+.crypto-layout.expanded .crypto-hero {
+    width: 0%;
+}
+
+.crypto-layout.expanded .crypto-hero-content,
+.crypto-layout.expanded .crypto-hero-image,
+.crypto-layout.expanded .crypto-hero-button {
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.crypto-hero-content,
+.crypto-hero-image,
+.crypto-hero-button {
+    transition: opacity 0.3s ease, visibility 0.3s ease;
 }
 
 .crypto-hero-content {
@@ -107,7 +132,7 @@
    reaproveitando os componentes do forno */
 .crypto-forno .ScrollForno {
     height: 100%;
-    background-color: #000000;
+    background-color: #00000000;
     display: flex;
     flex-wrap: wrap;
     justify-content: flex-start;
@@ -119,6 +144,52 @@
     width: 50%;
     height: 100%;
     overflow: hidden;
+    transition: width 0.5s ease;
+}
+
+.crypto-layout.expanded .crypto-forno {
+    width: 100%;
+}
+
+.crypto-forno {
+    position: relative;
+}
+
+.crypto-forno-collapse-button {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    z-index: 10;
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    padding: 14px 28px;
+    border-radius: 999px;
+    border: 2px solid #ffffff;
+    background: transparent;
+    color: #ffffff;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s ease, color 0.2s ease, transform 0.2s ease, opacity 0.3s ease, visibility 0.3s ease;
+    opacity: 0;
+    visibility: hidden;
+}
+
+.crypto-layout.expanded .crypto-forno-collapse-button {
+    opacity: 1;
+    visibility: visible;
+    display: inline-flex;
+}
+
+.crypto-forno-collapse-button .arrow {
+    font-size: 1.2rem;
+}
+
+.crypto-forno-collapse-button:hover {
+    background: #ffffff;
+    color: #000000;
+    transform: translateY(-2px);
 }
 
 

@@ -6,7 +6,7 @@
 .GrandaoBisteca {
     min-height: 500vh;
     background-color: #0a0a0a;
-    background-image:
+    #background-image:
         linear-gradient(rgba(45, 45, 45, 0.5) 1px, transparent 1px),
         linear-gradient(90deg, rgba(45, 45, 45, 0.5) 1px, transparent 1px);
     background-size: 56px 56px;
