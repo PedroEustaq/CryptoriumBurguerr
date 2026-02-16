@@ -1,22 +1,17 @@
-/* ========== GRANDÃO BISTECA – Slide com scroll + position sticky ========== */
+/* ========== GRANDÃO BISTECA – Scroll sticky + composição centralizada ========== */
 .GrandaoBisteca * {
     box-sizing: border-box;
 }
 
 .GrandaoBisteca {
     min-height: 500vh;
-    background-color: #0a0a0a;
-    #background-image:
-        linear-gradient(rgba(45, 45, 45, 0.5) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(45, 45, 45, 0.5) 1px, transparent 1px);
-    background-size: 56px 56px;
+    background-color: #0a0a0a00;
     width: 100%;
     max-width: 1500px;
     margin: 0 auto;
     position: relative;
 }
 
-/* Wrapper único sticky: acompanha o scroll durante toda a seção (500vh) */
 .GrandaoBisteca-sticky-wrap {
     position: sticky;
     top: 0;
@@ -27,7 +22,6 @@
     z-index: 1;
 }
 
-/* Barra de progresso – dentro do wrap, no topo */
 .GrandaoBisteca-progress {
     flex-shrink: 0;
     z-index: 12;
@@ -44,7 +38,6 @@
     transition: width 0.12s ease;
 }
 
-/* Título e subtítulo */
 .GrandaoBisteca-titulo {
     flex-shrink: 0;
     z-index: 10;
@@ -70,35 +63,26 @@
     text-align: center;
 }
 
-/* Layout: duas colunas que preenchem o espaço restante do wrap */
-.GrandaoBisteca-layout {
-    display: flex;
-    flex-direction: row;
-    width: 100%;
+/* ========== Área central única ========== */
+.GrandaoBisteca-central {
     flex: 1;
-    min-height: 0;
-}
-
-/* ========== Coluna esquerda – slides ========== */
-.GrandaoBisteca-slides {
-    width: 55%;
-    height: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    border-right: 1px solid rgba(255, 255, 255, 0.07);
-    overflow: hidden;
+    width: 100%;
+    min-height: 0;
+    padding: 0 1rem;
 }
 
 .slide-panel {
     position: relative;
     width: 100%;
-    height: 72%;
+    max-width: 560px;
+    flex: 1;
     display: flex;
     align-items: center;
     justify-content: center;
-    flex: 1;
 }
 
 .slide-item {
@@ -109,10 +93,10 @@
     align-items: center;
     justify-content: center;
     opacity: 0;
-    transform: scale(0.9) translateX(60px);
-    filter: blur(8px);
-    transition: opacity 0.5s ease, transform 0.5s ease, filter 0.5s ease;
+    transform: scale(0.94) translateY(16px);
+    transition: opacity 0.4s ease, transform 0.4s ease;
     pointer-events: none;
+    contain: layout style paint;
 }
 
 .GrandaoBisteca.slide-0 .slide-item[data-slide="0"],
@@ -121,40 +105,260 @@
 .GrandaoBisteca.slide-3 .slide-item[data-slide="3"],
 .GrandaoBisteca.slide-4 .slide-item[data-slide="4"] {
     opacity: 1;
-    transform: scale(1.06) translateX(0);
-    filter: blur(0) drop-shadow(0 24px 48px rgba(255, 180, 50, 0.18));
+    transform: scale(1) translateY(0);
     pointer-events: auto;
     z-index: 1;
 }
 
+.slide-nome {
+    margin: 0 0 0.5rem;
+    font-size: clamp(1.25rem, 2.5vw, 1.75rem);
+    font-weight: 800;
+    color: rgba(255, 255, 255, 0.98);
+    text-align: center;
+    text-shadow: 0 2px 16px rgba(0, 0, 0, 0.5);
+    letter-spacing: -0.02em;
+}
+
+/* ========== Composição: burger central + ingredientes ao redor ========== */
+.composicao {
+    position: relative;
+    width: 100%;
+    max-width: 420px;
+    aspect-ratio: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0.5rem 0;
+    contain: layout style;
+}
+
 .slide-img-wrap {
-    height: 100%;
-    max-height: 450px;
+    position: relative;
+    z-index: 2;
+    height: clamp(260px, 55vw, 380px);
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
-.slide-item img {
+.slide-img-wrap img {
     height: 100%;
     width: auto;
     object-fit: contain;
 }
 
-.slide-nome {
-    margin-top: 0.6rem;
-    font-size: clamp(1rem, 1.9vw, 1.4rem);
-    font-weight: 700;
-    color: rgba(255, 255, 255, 0.95);
-    text-shadow: 0 2px 12px rgba(0, 0, 0, 0.45);
+.ingrediente-svg {
+    position: absolute;
+    z-index: 1;
+    width: clamp(36px, 8vw, 52px);
+    height: clamp(36px, 8vw, 52px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0.9;
+    transition: opacity 0.3s ease;
 }
 
-/* Indicadores */
+.ingrediente-svg img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    filter: invert(1) sepia(0.5) saturate(2) hue-rotate(8deg) brightness(1.15);
+    #box-shadow: 0 4px 12px rgba(255, 180, 50, 0.35);
+    transition: filter 0.25s ease, box-shadow 0.25s ease, transform 0.25s ease;
+}
+
+.ingrediente-svg:hover img {
+    filter: invert(1) sepia(0.6) saturate(2.2) hue-rotate(8deg) brightness(1.25);
+    box-shadow: 0 6px 16px rgba(255, 180, 50, 0.5);
+    transform: scale(1.1);
+}
+
+.GrandaoBisteca.slide-0 .slide-item[data-slide="0"] .ingrediente-svg,
+.GrandaoBisteca.slide-1 .slide-item[data-slide="1"] .ingrediente-svg,
+.GrandaoBisteca.slide-2 .slide-item[data-slide="2"] .ingrediente-svg,
+.GrandaoBisteca.slide-3 .slide-item[data-slide="3"] .ingrediente-svg,
+.GrandaoBisteca.slide-4 .slide-item[data-slide="4"] .ingrediente-svg {
+    opacity: 1;
+    animation: ingredienteFlutua 3s ease-in-out infinite;
+}
+
+.GrandaoBisteca.slide-0 .slide-item[data-slide="0"] .ingrediente--top,
+.GrandaoBisteca.slide-1 .slide-item[data-slide="1"] .ingrediente--top,
+.GrandaoBisteca.slide-2 .slide-item[data-slide="2"] .ingrediente--top,
+.GrandaoBisteca.slide-3 .slide-item[data-slide="3"] .ingrediente--top,
+.GrandaoBisteca.slide-4 .slide-item[data-slide="4"] .ingrediente--top {
+    animation: ingredienteEntraTop 0.45s ease forwards, ingredienteFlutua 4s ease-in-out 0.5s infinite;
+}
+
+.GrandaoBisteca.slide-0 .slide-item[data-slide="0"] .ingrediente--right,
+.GrandaoBisteca.slide-1 .slide-item[data-slide="1"] .ingrediente--right,
+.GrandaoBisteca.slide-2 .slide-item[data-slide="2"] .ingrediente--right,
+.GrandaoBisteca.slide-3 .slide-item[data-slide="3"] .ingrediente--right,
+.GrandaoBisteca.slide-4 .slide-item[data-slide="4"] .ingrediente--right {
+    animation: ingredienteEntraRight 0.45s 0.06s ease forwards, ingredienteFlutuaRight 4s ease-in-out 0.56s infinite;
+}
+
+.GrandaoBisteca.slide-0 .slide-item[data-slide="0"] .ingrediente--bottom,
+.GrandaoBisteca.slide-1 .slide-item[data-slide="1"] .ingrediente--bottom,
+.GrandaoBisteca.slide-2 .slide-item[data-slide="2"] .ingrediente--bottom,
+.GrandaoBisteca.slide-3 .slide-item[data-slide="3"] .ingrediente--bottom,
+.GrandaoBisteca.slide-4 .slide-item[data-slide="4"] .ingrediente--bottom {
+    animation: ingredienteEntraBottom 0.45s 0.12s ease forwards, ingredienteFlutuaBottom 4s ease-in-out 0.62s infinite;
+}
+
+.GrandaoBisteca.slide-0 .slide-item[data-slide="0"] .ingrediente--left,
+.GrandaoBisteca.slide-1 .slide-item[data-slide="1"] .ingrediente--left,
+.GrandaoBisteca.slide-2 .slide-item[data-slide="2"] .ingrediente--left,
+.GrandaoBisteca.slide-3 .slide-item[data-slide="3"] .ingrediente--left,
+.GrandaoBisteca.slide-4 .slide-item[data-slide="4"] .ingrediente--left {
+    animation: ingredienteEntraLeft 0.45s 0.18s ease forwards, ingredienteFlutuaLeft 4s ease-in-out 0.68s infinite;
+}
+
+.ingrediente--top {
+    top: 2%;
+    left: 50%;
+    transform: translate(-50%, 0);
+}
+
+.ingrediente--right {
+    top: 50%;
+    right: 2%;
+    transform: translate(0, -50%);
+}
+
+.ingrediente--bottom {
+    bottom: 2%;
+    left: 50%;
+    transform: translate(-50%, 0);
+}
+
+.ingrediente--left {
+    top: 50%;
+    left: 2%;
+    transform: translate(0, -50%);
+}
+
+/* Flutuação leve – só transform (GPU) para performance */
+@keyframes ingredienteFlutua {
+    0%, 100% { transform: translate(-50%, 0); }
+    50% { transform: translate(-50%, -6px); }
+}
+@keyframes ingredienteFlutuaRight {
+    0%, 100% { transform: translate(0, -50%); }
+    50% { transform: translate(6px, -50%); }
+}
+@keyframes ingredienteFlutuaBottom {
+    0%, 100% { transform: translate(-50%, 0); }
+    50% { transform: translate(-50%, 6px); }
+}
+@keyframes ingredienteFlutuaLeft {
+    0%, 100% { transform: translate(0, -50%); }
+    50% { transform: translate(-6px, -50%); }
+}
+
+@keyframes ingredienteEntraTop {
+    from {
+        opacity: 0;
+        transform: translate(-50%, -50%) scale(0.6);
+    }
+    to {
+        opacity: 1;
+        transform: translate(-50%, 0) scale(1);
+    }
+}
+
+.GrandaoBisteca.slide-0 .slide-item[data-slide="0"] .ingrediente--right,
+.GrandaoBisteca.slide-1 .slide-item[data-slide="1"] .ingrediente--right,
+.GrandaoBisteca.slide-2 .slide-item[data-slide="2"] .ingrediente--right,
+.GrandaoBisteca.slide-3 .slide-item[data-slide="3"] .ingrediente--right,
+.GrandaoBisteca.slide-4 .slide-item[data-slide="4"] .ingrediente--right {
+    animation-name: ingredienteEntraRight;
+}
+
+@keyframes ingredienteEntraRight {
+    from {
+        opacity: 0;
+        transform: translate(20px, -50%) scale(0.6);
+    }
+    to {
+        opacity: 1;
+        transform: translate(0, -50%) scale(1);
+    }
+}
+
+.GrandaoBisteca.slide-0 .slide-item[data-slide="0"] .ingrediente--bottom,
+.GrandaoBisteca.slide-1 .slide-item[data-slide="1"] .ingrediente--bottom,
+.GrandaoBisteca.slide-2 .slide-item[data-slide="2"] .ingrediente--bottom,
+.GrandaoBisteca.slide-3 .slide-item[data-slide="3"] .ingrediente--bottom,
+.GrandaoBisteca.slide-4 .slide-item[data-slide="4"] .ingrediente--bottom {
+    animation-name: ingredienteEntraBottom;
+}
+
+@keyframes ingredienteEntraBottom {
+    from {
+        opacity: 0;
+        transform: translate(-50%, 20px) scale(0.6);
+    }
+    to {
+        opacity: 1;
+        transform: translate(-50%, 0) scale(1);
+    }
+}
+
+.GrandaoBisteca.slide-0 .slide-item[data-slide="0"] .ingrediente--left,
+.GrandaoBisteca.slide-1 .slide-item[data-slide="1"] .ingrediente--left,
+.GrandaoBisteca.slide-2 .slide-item[data-slide="2"] .ingrediente--left,
+.GrandaoBisteca.slide-3 .slide-item[data-slide="3"] .ingrediente--left,
+.GrandaoBisteca.slide-4 .slide-item[data-slide="4"] .ingrediente--left {
+    animation-name: ingredienteEntraLeft;
+}
+
+@keyframes ingredienteEntraLeft {
+    from {
+        opacity: 0;
+        transform: translate(-20px, -50%) scale(0.6);
+    }
+    to {
+        opacity: 1;
+        transform: translate(0, -50%) scale(1);
+    }
+}
+
+/* ========== Lista de ingredientes sutil ========== */
+.lista-ingredientes-sutil {
+    margin: 0.6rem 0 0;
+    padding: 0 0.75rem;
+    font-size: clamp(0.7rem, 1.2vw, 0.85rem);
+    font-weight: 500;
+    line-height: 1.5;
+    color: rgba(255, 255, 255, 0.45);
+    text-align: center;
+    letter-spacing: 0.02em;
+    max-width: 90%;
+    opacity: 0;
+    transform: translateY(8px);
+    transition: opacity 0.45s ease 0.15s, transform 0.45s ease 0.15s, color 0.3s ease;
+}
+
+.GrandaoBisteca.slide-0 .lista-ingredientes-sutil[data-text="0"],
+.GrandaoBisteca.slide-1 .lista-ingredientes-sutil[data-text="1"],
+.GrandaoBisteca.slide-2 .lista-ingredientes-sutil[data-text="2"],
+.GrandaoBisteca.slide-3 .lista-ingredientes-sutil[data-text="3"],
+.GrandaoBisteca.slide-4 .lista-ingredientes-sutil[data-text="4"] {
+    opacity: 1;
+    transform: translateY(0);
+    color: rgba(255, 255, 255, 0.55);
+}
+
+/* ========== Indicadores ========== */
 .slide-indicadores {
     display: flex;
     gap: 0.5rem;
     padding: 0.9rem;
     z-index: 5;
+    flex-shrink: 0;
 }
 
 .slide-dot {
@@ -175,12 +379,13 @@
     box-shadow: 0 0 18px rgba(255, 180, 50, 0.5);
 }
 
-/* Comentários emojis */
+/* ========== Comentários emojis ========== */
 .ComentariosFofos {
     width: 100%;
     padding: 0.6rem;
     background: linear-gradient(0deg, rgba(0, 0, 0, 0.5) 0%, transparent 100%);
     z-index: 5;
+    flex-shrink: 0;
 }
 
 .comentario1 {
@@ -207,165 +412,27 @@
     50% { transform: translateY(-8px) scale(1.08); }
 }
 
-/* ========== Coluna direita – Anúncio ========== */
-.GrandaoBisteca .Anuncio {
-    width: 45%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: stretch;
-    padding: 2rem;
-    background: rgba(255, 255, 255, 0.025);
-    border-left: 1px solid rgba(255, 255, 255, 0.06);
-    box-shadow: -10px 0 40px rgba(0, 0, 0, 0.25);
-}
-
-.Anuncio::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 3px;
-    background: linear-gradient(90deg, transparent, rgba(34, 197, 94, 0.5), rgba(234, 179, 8, 0.5), transparent);
-}
-
-.Anuncio::after {
-    content: "Aceitamos R$";
-    position: absolute;
-    top: 1rem;
-    right: 1.5rem;
-    font-size: 0.7rem;
-    font-weight: 700;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    color: rgba(34, 197, 94, 0.9);
-}
-
-.Anuncio > img:nth-child(1),
-.Anuncio > img:nth-child(2),
-.Anuncio > img:nth-child(3) {
-    position: absolute;
-    top: 1rem;
-    left: 1.5rem;
-    width: 30px;
-    height: auto;
-    opacity: 0.65;
-}
-
-.carta {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-    flex: 1;
-    justify-content: center;
-}
-
-.carta-textos {
-    position: relative;
-    min-height: 200px;
-}
-
-.carta-ingredientes {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    margin: 0;
-    padding: 0.5rem 0;
-    list-style: none;
-    font-size: clamp(1rem, 1.5vw, 1.25rem);
-    font-weight: 500;
-    line-height: 1.6;
-    color: rgba(255, 255, 255, 0.9);
-    letter-spacing: -0.01em;
-    opacity: 0;
-    transform: translateX(18px);
-    transition: opacity 0.45s ease, transform 0.45s ease;
-    pointer-events: none;
-}
-
-.GrandaoBisteca.slide-0 .carta-ingredientes[data-text="0"],
-.GrandaoBisteca.slide-1 .carta-ingredientes[data-text="1"],
-.GrandaoBisteca.slide-2 .carta-ingredientes[data-text="2"],
-.GrandaoBisteca.slide-3 .carta-ingredientes[data-text="3"],
-.GrandaoBisteca.slide-4 .carta-ingredientes[data-text="4"] {
-    opacity: 1;
-    transform: translateX(0);
-    pointer-events: auto;
-}
-
-.carta-ingredientes li {
-    display: flex;
-    align-items: center;
-    gap: 0.75rem;
-    padding: 0.45rem 0;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
-}
-
-.carta-ingredientes li:last-child {
-    border-bottom: none;
-}
-
-.carta-icone {
-    flex-shrink: 0;
-    width: 28px;
-    height: 28px;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    color: rgba(255, 200, 80, 0.9);
-}
-
-.carta-icone svg {
-    width: 100%;
-    height: 100%;
-}
-
-.DivPreco {
-    margin-top: auto;
-    padding-top: 0.8rem;
-}
-
-.buttonPreco {
-    width: 100%;
-    padding: 1rem 1.5rem;
-    font-size: 1.2rem;
-    font-weight: 700;
-    color: #fff;
-    background: linear-gradient(135deg, #22c55e 0%, #16a34a 100%);
-    border: 1px solid rgba(255, 255, 255, 0.15);
-    border-radius: 8px;
-    cursor: pointer;
-    transition: transform 0.2s ease, box-shadow 0.2s ease, filter 0.2s ease;
-}
-
-.buttonPreco:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 8px 28px rgba(34, 197, 94, 0.45);
-    filter: brightness(1.08);
-}
-
-.buttonPreco:active {
-    transform: translateY(0);
-}
-
 @media (max-width: 900px) {
-    .GrandaoBisteca-layout {
-        flex-direction: column;
+    .composicao {
+        max-width: 340px;
     }
 
-    .GrandaoBisteca-slides {
-        width: 100%;
-        min-height: 55%;
-        border-right: none;
-        border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+    .slide-img-wrap {
+        height: clamp(220px, 50vw, 300px);
     }
 
-    .GrandaoBisteca .Anuncio {
-        width: 100%;
-        min-height: 45%;
+    .ingrediente-svg {
+        width: clamp(32px, 7vw, 44px);
+        height: clamp(32px, 7vw, 44px);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .slide-item,
+    .ingrediente-svg,
+    .ingrediente-svg img {
+        animation: none !important;
+        transition-duration: 0.01ms !important;
     }
 }
 

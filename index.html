@@ -18,7 +18,7 @@
         <img src="img/biggourmetburguer.png" alt="">
         <div class="conteinerHome">
             <h1>O sabor que vale mais que um bitcoin</h1>
-            <button>Vem conhecer <img src="img/SolarSeta.svg" alt=""></button>
+            <button id="venhaVer">Vem conhecer <img src="img/SolarSeta.svg" alt=""></button>
         </div>
     </section>
     <section class="FornoConteiner">
@@ -27,7 +27,7 @@
             <h1>Burguers em alta</h1>
         </div>
 
-        <section class="ScrollForno">
+        <section class="ScrollForno" id="ScrollForno">
 
             <div class="BlocoBurguer">
                 <div class="promocionalBurguer">
@@ -99,7 +99,7 @@
 
     </section>
    
-    <section class="AnimacaoComBurgao">
+    <section class="AnimacaoComBurgao" id="AnimacaoComBurgao">
 
 
         <section class="conteinerScroll" aria-hidden="true">
@@ -177,28 +177,67 @@
             <h2 class="GrandaoBisteca-titulo">Cardápio</h2>
             <p class="GrandaoBisteca-subtitulo">Role para conhecer cada um</p>
 
-            <div class="GrandaoBisteca-layout">
-            <div class="GrandaoBisteca-slides">
+            <div class="GrandaoBisteca-central">
                 <div class="slide-panel">
+                    <!-- Slide 0: Bitcoin Burger -->
                     <div class="slide-item" data-slide="0">
-                        <div class="slide-img-wrap"><img src="img/bitcoinburguer.png" alt="Bitcoin Burger"></div>
-                        <span class="slide-nome">Bitcoin Burger</span>
+                        <h3 class="slide-nome">Bitcoin Burger</h3>
+                        <div class="composicao">
+                            <div class="ingrediente-svg ingrediente--top"><img src="foodsvg/mdi_beef.svg" alt="Carne"></div>
+                            <div class="ingrediente-svg ingrediente--right"><img src="foodsvg/bxs_cheese.svg" alt="Queijo"></div>
+                            <div class="ingrediente-svg ingrediente--bottom"><img src="foodsvg/ri_bread-fill.svg" alt="Pão"></div>
+                            <div class="ingrediente-svg ingrediente--left"><img src="foodsvg/mdi_soy-sauce.svg" alt="Molho"></div>
+                            <div class="slide-img-wrap"><img src="img/bitcoinburguer.png" alt="Bitcoin Burger"></div>
+                        </div>
+                        <p class="lista-ingredientes-sutil" data-text="0">Carne premium · Queijo cheddar · Pão brioche · Molho especial</p>
                     </div>
+                    <!-- Slide 1: Cheese Burger -->
                     <div class="slide-item" data-slide="1">
-                        <div class="slide-img-wrap"><img src="img/chesseburguer.png" alt="Cheese Burger"></div>
-                        <span class="slide-nome">Cheese Burger</span>
+                        <h3 class="slide-nome">Cheese Burger</h3>
+                        <div class="composicao">
+                            <div class="ingrediente-svg ingrediente--top"><img src="foodsvg/bxs_cheese.svg" alt="Queijo"></div>
+                            <div class="ingrediente-svg ingrediente--right"><img src="foodsvg/ri_bread-fill.svg" alt="Pão"></div>
+                            <div class="ingrediente-svg ingrediente--bottom"><img src="foodsvg/mdi_beef.svg" alt="Carne"></div>
+                            <div class="ingrediente-svg ingrediente--left"><img src="foodsvg/mdi_soy-sauce.svg" alt="Molho"></div>
+                            <div class="slide-img-wrap"><img src="img/chesseburguer.png" alt="Cheese Burger"></div>
+                        </div>
+                        <p class="lista-ingredientes-sutil" data-text="1">Queijo derretido (triplo) · Blend artesanal · Pão brioche · Molho cremoso</p>
                     </div>
+                    <!-- Slide 2: Classic -->
                     <div class="slide-item" data-slide="2">
-                        <div class="slide-img-wrap"><img src="img/classicburguer.png" alt="Classic Burger"></div>
-                        <span class="slide-nome">Classic</span>
+                        <h3 class="slide-nome">Classic</h3>
+                        <div class="composicao">
+                            <div class="ingrediente-svg ingrediente--top"><img src="foodsvg/mdi_beef.svg" alt="Carne"></div>
+                            <div class="ingrediente-svg ingrediente--right"><img src="foodsvg/lucide-lab_barbecue.svg" alt="Barbecue"></div>
+                            <div class="ingrediente-svg ingrediente--bottom"><img src="foodsvg/ri_bread-fill.svg" alt="Pão"></div>
+                            <div class="ingrediente-svg ingrediente--left"><img src="foodsvg/fluent-emoji-high-contrast_onion.svg" alt="Pickles"></div>
+                            <div class="slide-img-wrap"><img src="img/classicburguer.png" alt="Classic Burger"></div>
+                        </div>
+                        <p class="lista-ingredientes-sutil" data-text="2">Blend artesanal · Pão brioche · Pickles · Molho da casa</p>
                     </div>
+                    <!-- Slide 3: Onion -->
                     <div class="slide-item" data-slide="3">
-                        <div class="slide-img-wrap"><img src="img/onionburguer.png" alt="Onion Burger"></div>
-                        <span class="slide-nome">Onion</span>
+                        <h3 class="slide-nome">Onion</h3>
+                        <div class="composicao">
+                            <div class="ingrediente-svg ingrediente--top"><img src="foodsvg/fluent-emoji-high-contrast_onion.svg" alt="Cebola"></div>
+                            <div class="ingrediente-svg ingrediente--right"><img src="foodsvg/lucide-lab_barbecue.svg" alt="Barbecue"></div>
+                            <div class="ingrediente-svg ingrediente--bottom"><img src="foodsvg/mdi_beef.svg" alt="Carne"></div>
+                            <div class="ingrediente-svg ingrediente--left"><img src="foodsvg/ri_bread-fill.svg" alt="Pão"></div>
+                            <div class="slide-img-wrap"><img src="img/onionburguer.png" alt="Onion Burger"></div>
+                        </div>
+                        <p class="lista-ingredientes-sutil" data-text="3">Cebola caramelizada · Molho barbecue · Carne premium · Pão tostado</p>
                     </div>
+                    <!-- Slide 4: Strange -->
                     <div class="slide-item" data-slide="4">
-                        <div class="slide-img-wrap"><img src="img/strangeburguer.png" alt="Strange Burger"></div>
-                        <span class="slide-nome">Strange</span>
+                        <h3 class="slide-nome">Strange</h3>
+                        <div class="composicao">
+                            <div class="ingrediente-svg ingrediente--top"><img src="foodsvg/mdi_beef.svg" alt="Carne"></div>
+                            <div class="ingrediente-svg ingrediente--right"><img src="foodsvg/bxs_cheese.svg" alt="Queijo"></div>
+                            <div class="ingrediente-svg ingrediente--bottom"><img src="foodsvg/lucide-lab_barbecue.svg" alt="Molho"></div>
+                            <div class="ingrediente-svg ingrediente--left"><img src="foodsvg/mdi_soy-sauce.svg" alt="Molho secreto"></div>
+                            <div class="slide-img-wrap"><img src="img/strangeburguer.png" alt="Strange Burger"></div>
+                        </div>
+                        <p class="lista-ingredientes-sutil" data-text="4">Ingrediente surpresa · Blend especial · Molho secreto · Pão especial</p>
                     </div>
                 </div>
 
@@ -219,50 +258,6 @@
                         <img src="gifs/olhar.webp" alt="">
                     </div>
                 </div>
-            </div>
-
-            <div class="Anuncio">
-                <img src="img/etherLogo.png" alt="">
-                <img src="img/SolAna.png" alt="">
-                <img src="img/bitcoinLogo.png" alt="">
-                <div class="carta">
-                    <div class="carta-textos">
-                        <ul class="carta-ingredientes" data-text="0" aria-label="Ingredientes Bitcoin Burger">
-                            <li><span class="carta-icone" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M12 2C8 2 6 5 6 8c0 4 2 6 6 10 4-4 6-6 6-10 0-3-2-6-6-6z"/></svg></span> Carne premium</li>
-                            <li><span class="carta-icone" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="4" y="6" width="16" height="12" rx="1"/><path d="M4 10h16M4 14h16"/></svg></span> Queijo cheddar</li>
-                            <li><span class="carta-icone" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 12h16M4 8h16M4 16h16"/><ellipse cx="12" cy="12" rx="10" ry="4"/></svg></span> Pão brioche</li>
-                            <li><span class="carta-icone" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/><circle cx="12" cy="12" r="3"/></svg></span> Molho especial</li>
-                        </ul>
-                        <ul class="carta-ingredientes" data-text="1" aria-label="Ingredientes Cheese Burger">
-                            <li><span class="carta-icone" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="4" y="6" width="16" height="12" rx="1"/><path d="M4 10h16M4 14h16"/></svg></span> Queijo derretido (triplo)</li>
-                            <li><span class="carta-icone" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2C8 2 6 5 6 8c0 4 2 6 6 10 4-4 6-6 6-10 0-3-2-6-6-6z"/></svg></span> Blend artesanal</li>
-                            <li><span class="carta-icone" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 12h16M4 8h16M4 16h16"/><ellipse cx="12" cy="12" rx="10" ry="4"/></svg></span> Pão tipo brioche</li>
-                            <li><span class="carta-icone" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/><circle cx="12" cy="12" r="3"/></svg></span> Molho cremoso</li>
-                        </ul>
-                        <ul class="carta-ingredientes" data-text="2" aria-label="Ingredientes Classic">
-                            <li><span class="carta-icone" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2C8 2 6 5 6 8c0 4 2 6 6 10 4-4 6-6 6-10 0-3-2-6-6-6z"/></svg></span> Blend artesanal</li>
-                            <li><span class="carta-icone" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 12h16M4 8h16M4 16h16"/><ellipse cx="12" cy="12" rx="10" ry="4"/></svg></span> Pão brioche</li>
-                            <li><span class="carta-icone" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="4"/><path d="M8 12h8M12 8v8"/></svg></span> Pickles</li>
-                            <li><span class="carta-icone" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/></svg></span> Molho da casa</li>
-                        </ul>
-                        <ul class="carta-ingredientes" data-text="3" aria-label="Ingredientes Onion">
-                            <li><span class="carta-icone" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="6"/><path d="M12 6v12M6 12h12"/><circle cx="12" cy="12" r="2"/></svg></span> Cebola caramelizada</li>
-                            <li><span class="carta-icone" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4"/><path d="M4 8l4 4-4 4M20 8l-4 4 4 4"/></svg></span> Molho barbecue</li>
-                            <li><span class="carta-icone" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2C8 2 6 5 6 8c0 4 2 6 6 10 4-4 6-6 6-10 0-3-2-6-6-6z"/></svg></span> Carne premium</li>
-                            <li><span class="carta-icone" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 12h16M4 8h16M4 16h16"/><ellipse cx="12" cy="12" rx="10" ry="4"/></svg></span> Pão tostado</li>
-                        </ul>
-                        <ul class="carta-ingredientes" data-text="4" aria-label="Ingredientes Strange">
-                            <li><span class="carta-icone" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2L14 8l6 1-4 4 1 6-5-3-5 3 1-6-4-4 6-1z"/></svg></span> Ingrediente surpresa</li>
-                            <li><span class="carta-icone" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2C8 2 6 5 6 8c0 4 2 6 6 10 4-4 6-6 6-10 0-3-2-6-6-6z"/></svg></span> Blend especial</li>
-                            <li><span class="carta-icone" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4"/></svg></span> Molho secreto</li>
-                            <li><span class="carta-icone" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 12h16M4 8h16M4 16h16"/><ellipse cx="12" cy="12" rx="10" ry="4"/></svg></span> Pão especial</li>
-                        </ul>
-                    </div>
-                    <div class="DivPreco">
-                        <button class="buttonPreco">Peça já</button>
-                    </div>
-                </div>
-            </div>
             </div>
         </div>
     </section>
@@ -291,73 +286,94 @@
             </button>
             <section class="ScrollForno">
 
-                <div class="BlocoBurguer">
-                    <div class="promocionalBurguer">
-                        <div class="fundo fundo--yellow"></div>
-                        <img src="img/burgaoECoca.png" alt="Combo Bitcoin">
-                    </div>
-                    <div class="InfoBurguer">
-                        <h2>Combo Bitcoin</h2>
-                        <p>lorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem
-                            ipsum</p>
+                <div class="categoria-forno">
+                    <h2 class="categoria-titulo">Combos Principais</h2>
+                    <div class="categoria-burguers">
+                        <div class="BlocoBurguer">
+                            <div class="promocionalBurguer">
+                                <div class="fundo fundo--yellow"></div>
+                                <img src="img/burgaoECoca.png" alt="Combo Bitcoin">
+                            </div>
+                            <div class="InfoBurguer">
+                                <h2>Combo Bitcoin</h2>
+                                <p>lorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem
+                                    ipsum</p>
+                            </div>
+                        </div>
+
+                        <div class="BlocoBurguer">
+                            <div class="promocionalBurguer">
+                                <div class="fundo fundo--pink"></div>
+                                <img src="img/burgaoECoca.png" alt="Combo Etherium">
+                            </div>
+                            <div class="InfoBurguer">
+                                <h2>Combo Etherium</h2>
+                                <p>lorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem
+                                    ipsum</p>
+                            </div>
+                        </div>
+
+                        <div class="BlocoBurguer">
+                            <div class="promocionalBurguer">
+                                <div class="fundo fundo--blue"></div>
+                                <img src="img/burgaoECoca.png" alt="Combo Solana">
+                            </div>
+                            <div class="InfoBurguer">
+                                <h2>Combo Solana</h2>
+                                <p>lorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem
+                                    ipsum</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
-                <div class="BlocoBurguer">
-                    <div class="promocionalBurguer">
-                        <div class="fundo fundo--pink"></div>
-                        <img src="img/burgaoECoca.png" alt="Combo Etherium">
-                    </div>
-                    <div class="InfoBurguer">
-                        <h2>Combo Etherium</h2>
-                        <p>lorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem
-                            ipsum</p>
-                    </div>
-                </div>
-
-                <div class="BlocoBurguer">
-                    <div class="promocionalBurguer">
-                        <div class="fundo fundo--blue"></div>
-                        <img src="img/burgaoECoca.png" alt="Combo Solana">
-                    </div>
-                    <div class="InfoBurguer">
-                        <h2>Combo Solana</h2>
-                        <p>lorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem
-                            ipsum</p>
-                    </div>
-                </div>
-
-                <div class="BlocoBurguer">
-                    <div class="promocionalBurguer">
-                        <div class="fundo fundo--yellow"></div>
-                        <img src="img/etheCoka.png" alt="Combo Crypto Especial">
-                    </div>
-                    <div class="InfoBurguer">
-                        <h2>Combo Especial</h2>
-                        <p>lorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem
-                            ipsum</p>
-                    </div>
-                </div>
-                <div class="BlocoBurguer">
-                    <div class="promocionalBurguer">
-                        <div class="fundo fundo--yellow"></div>
-                        <img src="img/etheCoka.png" alt="Combo Crypto Especial">
-                    </div>
-                    <div class="InfoBurguer">
-                        <h2>Combo Especial</h2>
-                        <p>lorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem
-                            ipsum</p>
-                    </div>
-                </div>
-                <div class="BlocoBurguer">
-                    <div class="promocionalBurguer">
-                        <div class="fundo fundo--yellow"></div>
-                        <img src="img/etheCoka.png" alt="Combo Crypto Especial">
-                    </div>
-                    <div class="InfoBurguer">
-                        <h2>Combo Especial</h2>
-                        <p>lorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem
-                            ipsum</p>
+                <div class="categoria-forno">
+                    <h2 class="categoria-titulo">Combos Especiais</h2>
+                    <div class="categoria-burguers">
+                        <div class="BlocoBurguer">
+                            <div class="promocionalBurguer">
+                                <div class="fundo fundo--yellow"></div>
+                                <img src="img/etheCoka.png" alt="Combo Crypto Especial">
+                            </div>
+                            <div class="InfoBurguer">
+                                <h2>Combo Especial</h2>
+                                <p>lorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem
+                                    ipsum</p>
+                            </div>
+                        </div>
+                        <div class="BlocoBurguer">
+                            <div class="promocionalBurguer">
+                                <div class="fundo fundo--yellow"></div>
+                                <img src="img/etheCoka.png" alt="Combo Crypto Especial">
+                            </div>
+                            <div class="InfoBurguer">
+                                <h2>Combo Especial</h2>
+                                <p>lorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem
+                                    ipsum</p>
+                            </div>
+                        </div>
+                        <div class="BlocoBurguer">
+                            <div class="promocionalBurguer">
+                                <div class="fundo fundo--yellow"></div>
+                                <img src="img/etheCoka.png" alt="Combo Crypto Especial">
+                            </div>
+                            <div class="InfoBurguer">
+                                <h2>Combo Especial</h2>
+                                <p>lorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem
+                                    ipsum</p>
+                            </div>
+                        </div>
+                        <div class="BlocoBurguer">
+                            <div class="promocionalBurguer">
+                                <div class="fundo fundo--pink"></div>
+                                <img src="img/burgaoECoca.png" alt="Combo Premium">
+                            </div>
+                            <div class="InfoBurguer">
+                                <h2>Combo Premium</h2>
+                                <p>lorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem
+                                    ipsum</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
@@ -425,42 +441,46 @@
 
     const sectionAnim = document.querySelector('.AnimacaoComBurgao');
     const h1Reveal = document.querySelector('.h1-scroll-reveal');
+    const sectionGrandao = document.getElementById('grandao-bisteca');
+    const TOTAL_SLIDES = 5;
+    var lastScrollY = -1;
+    var lastUpdate = 0;
+    var throttleMs = 50;
 
     function updateScrollReveal() {
         if (!sectionAnim || !h1Reveal) return;
-        const rect = sectionAnim.getBoundingClientRect();
-        const sectionHeight = sectionAnim.offsetHeight;
-        const viewportHeight = window.innerHeight;
-        const sectionTop = rect.top;
-
-        // progress: 0 = seção entrando, 1 = scrolled através dela
-        // Ajustado para começar mais cedo: multiplica por 1.4 e começa quando a seção está mais acima
-        const rawProgress = (viewportHeight - sectionTop + viewportHeight * 0.3) / (viewportHeight + sectionHeight);
-        const progress = Math.min(1, Math.max(0, rawProgress * 1.2));
-
+        var rect = sectionAnim.getBoundingClientRect();
+        var sectionHeight = sectionAnim.offsetHeight;
+        var vh = window.innerHeight;
+        var rawProgress = (vh - rect.top + vh * 0.3) / (vh + sectionHeight);
+        var progress = Math.min(1, Math.max(0, rawProgress * 1.2));
         h1Reveal.style.setProperty('--scroll-progress', progress);
     }
 
-    const sectionGrandao = document.getElementById('grandao-bisteca');
-    const TOTAL_SLIDES = 5;
-
     function updateGrandaoSlide() {
         if (!sectionGrandao) return;
-        const rect = sectionGrandao.getBoundingClientRect();
-        const sectionHeight = sectionGrandao.offsetHeight;
-        const vh = window.innerHeight;
-        const progress = Math.max(0, Math.min(1, (vh - rect.top) / (vh + sectionHeight)));
-        const index = Math.min(TOTAL_SLIDES - 1, Math.floor(progress * TOTAL_SLIDES));
+        var rect = sectionGrandao.getBoundingClientRect();
+        var sectionHeight = sectionGrandao.offsetHeight;
+        var vh = window.innerHeight;
+        var progress = Math.max(0, Math.min(1, (vh - rect.top) / (vh + sectionHeight)));
+        var index = Math.min(TOTAL_SLIDES - 1, Math.floor(progress * TOTAL_SLIDES));
         sectionGrandao.classList.remove('slide-0', 'slide-1', 'slide-2', 'slide-3', 'slide-4');
         sectionGrandao.classList.add('slide-' + index);
-        const bar = document.getElementById('grandao-progress-bar');
+        var bar = document.getElementById('grandao-progress-bar');
         if (bar) bar.style.width = (progress * 100) + '%';
     }
 
     function raf(time) {
         lenis.raf(time);
-        updateScrollReveal();
-        updateGrandaoSlide();
+        var y = window.scrollY || document.documentElement.scrollTop;
+        if (y !== lastScrollY) {
+            lastScrollY = y;
+            if (time - lastUpdate > throttleMs || lastUpdate === 0) {
+                lastUpdate = time;
+                updateScrollReveal();
+                updateGrandaoSlide();
+            }
+        }
         requestAnimationFrame(raf);
     }
 
@@ -477,26 +497,29 @@
     
     function togglePanel() {
         if (!cryptoLayout) return;
-        
         cryptoLayout.classList.toggle('expanded');
     }
     
-    if (expandButton && cryptoLayout) {
+    if (expandButton) {
         expandButton.addEventListener('click', function(e) {
             e.stopPropagation();
             togglePanel();
         });
     }
     
-    if (collapseButton && cryptoLayout) {
+    if (collapseButton) {
         collapseButton.addEventListener('click', function(e) {
             e.stopPropagation();
             togglePanel();
         });
     }
 
-
-
+    document.getElementById("venhaVer").addEventListener("click", function() {
+        console.log("iii")
+    document.getElementById("AnimacaoComBurgao").scrollIntoView({
+      behavior: "smooth"
+    });
+  });
 
 
 </script>
