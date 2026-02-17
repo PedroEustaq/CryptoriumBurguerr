@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cardapio | Crypto Burguer</title>
+    <link rel="stylesheet" href="cabecalho.css">
+    <link rel="stylesheet" href="css/fornoconteiner.css">
+    <link rel="stylesheet" href="css/cardapio.css">
+    <link rel="stylesheet" href="css/rodape.css">
+</head>
+<body>
+    <header class="crypto-header">
+        <a href="index.html" class="crypto-header-logo">Crypto Burguer</a>
+        <nav class="crypto-header-nav">
+            <a href="index.html">Inicio</a>
+            <a href="cardapio.html">Cardapio</a>
+            <a href="#" class="pedido-btn" aria-label="Ver pedido" title="Ver pedido">
+                <img src="img/lets-icons_order.svg" alt="">
+                <span>Pedido</span>
+            </a>
+        </nav>
+    </header>
+
+    <main class="cardapio-page">
+        <!-- Promocao opcional: se nao quiser mostrar, adicione "hidden" nesta section ou remova o bloco inteiro -->
+        <section class="promo-dia" id="promo-dia">
+            <span class="promo-kicker">Promocao do Dia</span>
+            <h2 class="promo-titulo">Bitcoin Burger em Oferta</h2>
+            <p class="promo-subtitulo">O burger mais pedido da casa com condicao especial por tempo limitado.</p>
+
+            <div class="promo-stage">
+                <article class="BlocoBurguer promo-bloco" data-search="bitcoin burger promocao">
+                    <div class="promo-bloco-bg-glow" aria-hidden="true"></div>
+                    <div class="promo-badge">Top Seller</div>
+                    <div class="promo-preco">R$ 29,90</div>
+
+                    <div class="promo-hero">
+                        <img src="img/bitcoinburguer.png" alt="Bitcoin Burger Promocional">
+                    </div>
+
+                    <div class="promo-conteudo">
+                        <h3>Bitcoin Burger</h3>
+                        <p>Blend premium, cheddar duplo e molho especial da casa com toque defumado.</p>
+                        <div class="promo-tags-mini">
+                            <span>Cheddar duplo</span>
+                            <span>Pao brioche</span>
+                            <span>Molho secreto</span>
+                        </div>
+                    </div>
+                </article>
+
+                
+            </div>
+
+            <div class="promo-acoes">
+                <a href="#" class="promo-cta-btn">Garantir promocao</a>
+                <span class="promo-tag">Apenas hoje</span>
+            </div>
+        </section>
+
+        <section class="cardapio-topo">
+            <h1>Cardapio de Hamburgueres</h1>
+            <p>Pesquise pelo nome e encontre rapido seu burger favorito.</p>
+            <div class="busca-wrap">
+                <input type="search" id="busca-burguer" placeholder="Ex: Bitcoin Burger, Onion..." aria-label="Pesquisar hamburguer por nome">
+            </div>
+        </section>
+
+        <section class="cardapio-secao">
+            <div class="secao-topo">
+                <h2 class="secao-titulo">Em Alta</h2>
+                <div class="secao-controles">
+                    <button class="scroll-btn" type="button" data-scroll-target="secao-em-alta" data-dir="left" aria-label="Rolar para esquerda">‹</button>
+                    <button class="scroll-btn" type="button" data-scroll-target="secao-em-alta" data-dir="right" aria-label="Rolar para direita">›</button>
+                </div>
+            </div>
+            <section class="grade-burguers secao-fileira ScrollForno" id="secao-em-alta">
+                <article class="BlocoBurguer" data-search="bitcoin burger">
+                    <div class="promocionalBurguer">
+                        <div class="fundo fundo--yellow"></div>
+                        <img src="img/bitcoinburguer.png" alt="Bitcoin Burger">
+                    </div>
+                    <div class="InfoBurguer">
+                        <h2>Bitcoin Burger</h2>
+                        <p>Blend premium, queijo cheddar e molho da casa.</p>
+                    </div>
+                </article>
+
+                <article class="BlocoBurguer" data-search="cheese burger chesse">
+                    <div class="promocionalBurguer">
+                        <div class="fundo fundo--yellow"></div>
+                        <img src="img/chesseburguer.png" alt="Cheese Burger">
+                    </div>
+                    <div class="InfoBurguer">
+                        <h2>Cheese Burger</h2>
+                        <p>Queijo em destaque e finalizacao cremosa.</p>
+                    </div>
+                </article>
+
+                <article class="BlocoBurguer" data-search="combo bitcoin coca">
+                    <div class="promocionalBurguer">
+                        <div class="fundo fundo--yellow"></div>
+                        <img src="img/burgaoECoca.png" alt="Combo Bitcoin">
+                    </div>
+                    <div class="InfoBurguer">
+                        <h2>Combo Bitcoin</h2>
+                        <p>Burger + refri no combo mais pedido do cardapio.</p>
+                    </div>
+                </article>
+                <article class="BlocoBurguer" data-search="combo bitcoin coca">
+                    <div class="promocionalBurguer">
+                        <div class="fundo fundo--yellow"></div>
+                        <img src="img/burgaoECoca.png" alt="Combo Bitcoin">
+                    </div>
+                    <div class="InfoBurguer">
+                        <h2>Combo Bitcoin</h2>
+                        <p>Burger + refri no combo mais pedido do cardapio.</p>
+                    </div>
+                </article>
+
+                <article class="BlocoBurguer" data-search="onion burger cebola">
+                    <div class="promocionalBurguer">
+                        <div class="fundo fundo--pink"></div>
+                        <img src="img/onionburguer.png" alt="Onion Burger">
+                    </div>
+                    <div class="InfoBurguer">
+                        <h2>Onion Burger</h2>
+                        <p>Cebola caramelizada e toque especial da cozinha.</p>
+                    </div>
+                </article>
+            </section>
+        </section>
+
+        <section class="cardapio-secao">
+            <div class="secao-topo">
+                <h2 class="secao-titulo">Classicos da Casa</h2>
+                <div class="secao-controles">
+                    <button class="scroll-btn" type="button" data-scroll-target="secao-classicos" data-dir="left" aria-label="Rolar para esquerda">‹</button>
+                    <button class="scroll-btn" type="button" data-scroll-target="secao-classicos" data-dir="right" aria-label="Rolar para direita">›</button>
+                </div>
+            </div>
+            <section class="grade-burguers secao-fileira ScrollForno" id="secao-classicos">
+                <article class="BlocoBurguer" data-search="classic burger classic">
+                    <div class="promocionalBurguer">
+                        <div class="fundo fundo--blue"></div>
+                        <img src="img/classicburguer.png" alt="Classic Burger">
+                    </div>
+                    <div class="InfoBurguer">
+                        <h2>Classic Burger</h2>
+                        <p>Sabor tradicional com pao macio e carne suculenta.</p>
+                    </div>
+                </article>
+
+                <article class="BlocoBurguer" data-search="strange burger especial">
+                    <div class="promocionalBurguer">
+                        <div class="fundo fundo--blue"></div>
+                        <img src="img/strangeburguer.png" alt="Strange Burger">
+                    </div>
+                    <div class="InfoBurguer">
+                        <h2>Strange Burger</h2>
+                        <p>Receita diferente com combinacao surpreendente.</p>
+                    </div>
+                </article>
+
+                <article class="BlocoBurguer" data-search="happi burger happi">
+                    <div class="promocionalBurguer">
+                        <div class="fundo fundo--pink"></div>
+                        <img src="img/happiburguer.png" alt="Happi Burger">
+                    </div>
+                    <div class="InfoBurguer">
+                        <h2>Happi Burger</h2>
+                        <p>Opcao divertida com muito sabor em cada mordida.</p>
+                    </div>
+                </article>
+
+                <article class="BlocoBurguer" data-search="combo etherium ethe coka">
+                    <div class="promocionalBurguer">
+                        <div class="fundo fundo--blue"></div>
+                        <img src="img/etheCoka.png" alt="Combo Etherium">
+                    </div>
+                    <div class="InfoBurguer">
+                        <h2>Combo Etherium</h2>
+                        <p>Versao combo com sabor intenso e visual marcante.</p>
+                    </div>
+                </article>
+            </section>
+        </section>
+
+        <section class="cardapio-secao">
+            <div class="secao-topo">
+                <h2 class="secao-titulo">Combos para Compartilhar</h2>
+                <div class="secao-controles">
+                    <button class="scroll-btn" type="button" data-scroll-target="secao-combos" data-dir="left" aria-label="Rolar para esquerda">‹</button>
+                    <button class="scroll-btn" type="button" data-scroll-target="secao-combos" data-dir="right" aria-label="Rolar para direita">›</button>
+                </div>
+            </div>
+            <section class="grade-burguers secao-fileira ScrollForno" id="secao-combos">
+                <article class="BlocoBurguer" data-search="combo bitcoin coca">
+                    <div class="promocionalBurguer">
+                        <div class="fundo fundo--yellow"></div>
+                        <img src="img/burgaoECoca.png" alt="Combo Bitcoin">
+                    </div>
+                    <div class="InfoBurguer">
+                        <h2>Combo Bitcoin</h2>
+                        <p>Combo completo para matar a fome da galera.</p>
+                    </div>
+                </article>
+
+                <article class="BlocoBurguer" data-search="combo etherium ethe coka">
+                    <div class="promocionalBurguer">
+                        <div class="fundo fundo--blue"></div>
+                        <img src="img/etheCoka.png" alt="Combo Etherium">
+                    </div>
+                    <div class="InfoBurguer">
+                        <h2>Combo Etherium</h2>
+                        <p>Sabor forte com acompanhamento gelado.</p>
+                    </div>
+                </article>
+
+                <article class="BlocoBurguer" data-search="cheese burger chesse">
+                    <div class="promocionalBurguer">
+                        <div class="fundo fundo--yellow"></div>
+                        <img src="img/chesseburguer.png" alt="Cheese Burger">
+                    </div>
+                    <div class="InfoBurguer">
+                        <h2>Cheese Burger</h2>
+                        <p>Perfeito para completar qualquer combo.</p>
+                    </div>
+                </article>
+
+                <article class="BlocoBurguer" data-search="classic burger classic">
+                    <div class="promocionalBurguer">
+                        <div class="fundo fundo--blue"></div>
+                        <img src="img/classicburguer.png" alt="Classic Burger">
+                    </div>
+                    <div class="InfoBurguer">
+                        <h2>Classic Burger</h2>
+                        <p>Sempre cai bem em qualquer pedido.</p>
+                    </div>
+                </article>
+            </section>
+        </section>
+
+        <p class="nenhum-resultado" id="sem-resultado" hidden>Nenhum hamburguer encontrado.</p>
+    </main>
+
+    <section class="rodape" id="rodape">
+        <div class="rodape-conteudo">
+            <div class="rodape-coluna rodape-contato">
+                <h3>Contato</h3>
+                <ul class="rodape-lista">
+                    <li>suporte@cryptoburguer.com</li>
+                    <li>ðŸ“± (31) 99983-1366</li>
+                    <li>ðŸ“ Rua AndrÃ© Fernandes, Nova SuÃ­Ã§a</li>
+                </ul>
+
+                <div class="rodape-mapa">
+                    <!-- Substitua esta imagem pelo mapa do Google quando estiver pronto -->
+                    <img src="img/mapa-google.png" alt="Mapa da regiÃ£o da Crypto Burguer">
+                </div>
+            </div>
+
+            <div class="rodape-coluna rodape-suporte">
+                <h3>Suporte</h3>
+                <ul class="rodape-lista">
+                    <li><a href="#">Termos e CondiÃ§Ãµes</a></li>
+                    <li><a href="#">PolÃ­tica de Privacidade</a></li>
+                </ul>
+            </div>
+
+            <div class="rodape-coluna rodape-social">
+                <h3>Siga-nos</h3>
+                <div class="rodape-icones-sociais">
+                    <a href="#" aria-label="Instagram" class="icone-social">IG</a>
+                    <a href="#" aria-label="Facebook" class="icone-social">FB</a>
+                    <a href="#" aria-label="YouTube" class="icone-social">YT</a>
+                    <a href="#" aria-label="X (Twitter)" class="icone-social">X</a>
+                </div>
+
+                <div class="rodape-logo">
+                    <!-- Substitua esta imagem pelo logo oficial da Crypto Burguer -->
+                    <img src="img/logoCrypto.png" alt="Logo Crypto Burguer">
+                </div>
+            </div>
+        </div>
+
+        <div class="rodape-direitos">
+            <p>Copyright Â© 2010-2026<br>
+                Crypto Burguer<br>
+                Todos os direitos reservados.
+            </p>
+        </div>
+    </section>
+
+    <script>
+        const campoBusca = document.getElementById('busca-burguer');
+        const cards = Array.from(document.querySelectorAll('.BlocoBurguer'));
+        const mensagemVazia = document.getElementById('sem-resultado');
+        const secoes = Array.from(document.querySelectorAll('.cardapio-secao'));
+        const botoesScroll = Array.from(document.querySelectorAll('.scroll-btn'));
+
+        function normalizar(texto) {
+            return texto
+                .toLowerCase()
+                .normalize('NFD')
+                .replace(/[\u0300-\u036f]/g, '')
+                .trim();
+        }
+
+        function filtrarBurguers() {
+            const termo = normalizar(campoBusca.value);
+            let totalVisiveis = 0;
+
+            cards.forEach((card) => {
+                const nome = normalizar(card.dataset.search || '');
+                const mostrar = nome.includes(termo);
+                card.classList.toggle('oculto', !mostrar);
+                if (mostrar) totalVisiveis += 1;
+            });
+
+            secoes.forEach((secao) => {
+                const visiveisNaSecao = secao.querySelectorAll('.BlocoBurguer:not(.oculto)').length;
+                secao.hidden = visiveisNaSecao === 0;
+            });
+
+            mensagemVazia.hidden = totalVisiveis !== 0;
+        }
+
+        campoBusca.addEventListener('input', filtrarBurguers);
+
+        botoesScroll.forEach((botao) => {
+            botao.addEventListener('click', () => {
+                const alvoId = botao.dataset.scrollTarget;
+                const direcao = botao.dataset.dir === 'left' ? -1 : 1;
+                const faixa = document.getElementById(alvoId);
+                if (!faixa) return;
+                const distancia = Math.max(faixa.clientWidth * 0.9, 760);
+                faixa.scrollBy({
+                    left: direcao * distancia,
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>
+

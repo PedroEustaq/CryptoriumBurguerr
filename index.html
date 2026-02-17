@@ -4,24 +4,43 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Cryptorium Burguer</title>
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/fornoconteiner.css">
     <link rel="stylesheet" href="css/animacaocomburgao.css">
     <link rel="stylesheet" href="css/grandaobisteca.css">
     <link rel="stylesheet" href="css/pedecrpto.css">
     <link rel="stylesheet" href="css/rodape.css">
+    <link rel="stylesheet" href="cabecalho.css">
 </head>
 
 <body>
-    <section class="LandingHome">
+    <header class="crypto-header">
+        <a href="#home" class="crypto-header-logo">Crypto Burguer</a>
+        <nav class="crypto-header-nav">
+            <a href="#home">Início</a>
+            <a href="#forno">Em Alta</a>
+            <a href="cardapio.html">Cardapio</a>
+            <!--
+            <a href="#AnimacaoComBurgao">Animacao</a>
+            -->
+            <a href="#crypto-layout">Pedir</a>
+            <a href="#rodape">Contato</a>
+            <a href="#" class="pedido-btn" aria-label="Ver pedido" title="Ver pedido">
+                <img src="img/lets-icons_order.svg" alt="">
+                <span>Pedido</span>
+            </a>
+        </nav>
+    </header>
+
+    <section class="LandingHome" id="home">
         <img src="img/biggourmetburguer.png" alt="">
         <div class="conteinerHome">
             <h1>O sabor que vale mais que um bitcoin</h1>
             <button id="venhaVer">Vem conhecer <img src="img/SolarSeta.svg" alt=""></button>
         </div>
     </section>
-    <section class="FornoConteiner">
+    <section class="FornoConteiner" id="forno">
         <div class="cabecaForno">
             <img src="gifs/fire.webp" alt="">
             <h1>Burguers em alta</h1>
@@ -174,7 +193,7 @@
             <div class="GrandaoBisteca-progress" aria-hidden="true">
                 <div class="GrandaoBisteca-progress-bar" id="grandao-progress-bar"></div>
             </div>
-            <h2 class="GrandaoBisteca-titulo">Cardápio</h2>
+            <h2 class="GrandaoBisteca-titulo"> &nbsp;</h2>
             <p class="GrandaoBisteca-subtitulo">Role para conhecer cada um</p>
 
             <div class="GrandaoBisteca-central">
@@ -262,7 +281,7 @@
         </div>
     </section>
 
-    <main class="crypto-layout">
+    <main class="crypto-layout" id="crypto-layout">
         <section class="crypto-hero">
             <div class="crypto-hero-content">
                 <h1>Pede um<br>crypto.</h1>
@@ -381,7 +400,7 @@
         </section>
 
     </main>
-    <section class="rodape">
+    <section class="rodape" id="rodape">
         <div class="rodape-conteudo">
             <div class="rodape-coluna rodape-contato">
                 <h3>Contato</h3>
@@ -442,6 +461,8 @@
     const sectionAnim = document.querySelector('.AnimacaoComBurgao');
     const h1Reveal = document.querySelector('.h1-scroll-reveal');
     const sectionGrandao = document.getElementById('grandao-bisteca');
+    var snapArmed = true;
+    var snappingNow = false;
     const TOTAL_SLIDES = 5;
     var lastScrollY = -1;
     var lastUpdate = 0;
@@ -479,6 +500,7 @@
                 lastUpdate = time;
                 updateScrollReveal();
                 updateGrandaoSlide();
+        
             }
         }
         requestAnimationFrame(raf);
@@ -489,6 +511,7 @@
         updateScrollReveal();
         updateGrandaoSlide();
     });
+
 
     // Sistema de expansão do painel crypto-forno
     const cryptoLayout = document.querySelector('.crypto-layout');

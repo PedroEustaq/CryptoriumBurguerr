@@ -1,0 +1,135 @@
+.crypto-header {
+            position: fixed;
+            top: 16px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: min(94%, 1120px);
+            z-index: 999;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 16px;
+            border-radius: 18px;
+            background: linear-gradient(120deg, rgba(255, 255, 255, 0.17), rgba(255, 255, 255, 0.05));
+            border: 1px solid rgba(255, 255, 255, 0.28);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25), inset 0 1px 0 rgba(255, 255, 255, 0.35);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            transform-origin: top center;
+            animation: headerShrink linear both;
+            animation-timeline: scroll(root block);
+            animation-range: 45vh 60vh;
+        }
+
+        .crypto-header-logo {
+            color: #fff;
+            text-decoration: none;
+            font-weight: 800;
+            letter-spacing: 0.4px;
+            font-size: clamp(0.9rem, 2vw, 1.05rem);
+        }
+
+        .crypto-header-nav {
+            display: flex;
+            gap: 10px;
+        }
+
+        .crypto-header-nav a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 0.88rem;
+            padding: 8px 12px;
+            border-radius: 999px;
+            border: 1px solid transparent;
+            transition: background-color 0.25s ease, border-color 0.25s ease;
+        }
+
+.crypto-header-nav a:hover {
+            background-color: rgba(255, 255, 255, 0.16);
+            border-color: rgba(255, 255, 255, 0.34);
+        }
+
+.crypto-header-nav .pedido-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: #ffffff;
+            text-decoration: none;
+            font-size: 0.82rem;
+            font-weight: 700;
+            padding: 8px 12px;
+            border-radius: 999px;
+            border: 1px solid rgba(255, 255, 255, 0.35);
+            background: linear-gradient(120deg, rgba(255, 197, 61, 0.3), rgba(255, 150, 0, 0.15));
+            box-shadow: 0 0 0 rgba(255, 170, 0, 0.35);
+            animation: pulsePedido 2.4s ease-in-out infinite;
+            transition: transform 0.25s ease, border-color 0.25s ease;
+            margin-left: 4px;
+        }
+
+.crypto-header-nav .pedido-btn img {
+            width: 18px;
+            height: 18px;
+            display: block;
+            filter: invert(77%) sepia(52%) saturate(1362%) hue-rotate(352deg) brightness(104%) contrast(101%);
+        }
+
+.crypto-header-nav .pedido-btn:hover {
+            transform: translateY(-1px);
+            border-color: rgba(255, 220, 150, 0.75);
+        }
+
+@keyframes pulsePedido {
+            0%, 100% {
+                box-shadow: 0 0 0 0 rgba(255, 170, 0, 0.18);
+            }
+            50% {
+                box-shadow: 0 0 0 8px rgba(255, 170, 0, 0.04);
+            }
+        }
+
+@media (prefers-reduced-motion: reduce) {
+            .crypto-header-nav .pedido-btn {
+                animation: none;
+            }
+        }
+
+@keyframes headerShrink {
+            from {
+                transform: translateX(-50%) scale(1);
+                
+                padding: 10px 16px;
+                border-radius: 18px;
+            }
+            to {
+                width: 30%;
+                transform: translateX(-50%) scale(0.88);
+                padding: 6px 10px;
+                border-radius: 14px;
+            }
+        }
+
+        @media (max-width: 700px) {
+            .crypto-header {
+                top: 10px;
+                width: min(96%, 1120px);
+                padding: 8px 10px;
+            }
+
+            .crypto-header-nav {
+                gap: 4px;
+            }
+
+            .crypto-header-nav a {
+                font-size: 0.75rem;
+                padding: 7px 9px;
+            }
+
+            .crypto-header-nav .pedido-btn {
+                padding: 7px 9px;
+            }
+
+            .crypto-header-nav .pedido-btn span {
+                display: none;
+            }
+        }
