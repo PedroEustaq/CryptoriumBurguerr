@@ -2,11 +2,12 @@
     /* Seção Sobre */
     .crypto-header {
         animation-name: none;
+        display: none;
     }
 
-    .LandingHome>img {
+    .LandingHome > img {
         width: 240%;
-        transform: scale(1.2) translateY(100px)
+        transform: scale(1.2) translateY(100px);
     }
     .conteinerHome >h1 {
         font-size: 52px;
