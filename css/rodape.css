@@ -122,3 +122,13 @@ body {
         text-align: center;
     }
 }
+
+.iconeBranco {
+    filter: invert(100%);
+    transition: filter 0.2s ease;
+}
+
+.icone-social:hover > .iconeBranco {
+    filter: invert(0%);
+        transition: filter 0.2s ease;
+}
