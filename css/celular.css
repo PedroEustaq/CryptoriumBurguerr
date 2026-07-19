@@ -81,4 +81,13 @@
 .BlocoBurguer:hover .promocionalBurguer > img.SoBurguer {
     transform: translateX(0px) translateY(15px) scale(1.20);
 }
+.GrandaoBisteca {
+    display: none;
+}
+    .crypto-forno .ScrollForno {
+    padding-left: 0px;
+}
+.categoria-burguers {
+    gap: 0px;
+}
 }
