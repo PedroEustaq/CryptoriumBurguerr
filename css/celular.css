@@ -1,6 +1,84 @@
 @media (max-width: 768px) {
     /* Seção Sobre */
     .crypto-header {
-        background-color: red;
+        animation-name: none;
     }
+
+    .LandingHome>img {
+        width: 240%;
+        transform: scale(1.2) translateY(100px)
+    }
+    .conteinerHome >h1 {
+        font-size: 52px;
+        line-height: 45px;
+        margin-bottom: 20px;
+    }
+    .BlocoBurguer {
+    height: 200px;
+    width: 145px;
+    background-color: rgb(0, 0, 0);
+    display: flex;
+    flex-flow: column nowrap;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    margin-right: 10px;
+    max-width: 290px;
+    border-radius: 0px;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1),
+                box-shadow 0.35s ease,
+                border-color 0.3s ease;
+}
+.promocionalBurguer > img {
+        position: absolute;
+    width: 23%;
+    max-width: 150px;
+    min-width: 120px;
+    transform: translateX(10px) translateY(20px);
+    transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+    z-index: 2;
+}
+
+.BlocoBurguer:hover .promocionalBurguer > img {
+    transform: translateX(10px) translateY(5px) scale(1);
+}
+.InfoBurguer >h2 {
+    font-size: 17px;
+    transform: translateY(20px);
+}
+.InfoBurguer > p {
+    display: none
+}
+.AnimacaoComBurgao {
+    display: none;
+}
+.crypto-layout {
+    flex-flow: column-reverse nowrap;
+}
+.crypto-hero {
+    width: 100%
+}
+.crypto-forno {
+    width: 100%;
+}
+.categoria-burguers > .BlocoBurguer {
+    height: 200px;
+    width: 145px;
+    min-width: 0px;
+}
+.crypto-layout.expanded  {
+    height: 700px;
+}
+
+.crypto-layout.expanded .crypto-hero {
+    display: none;
+}
+
+.promocionalBurguer > img.SoBurguer {
+       transform: translateX(0px) translateY(25px);
+}
+.BlocoBurguer:hover .promocionalBurguer > img.SoBurguer {
+    transform: translateX(0px) translateY(15px) scale(1.20);
+}
 }

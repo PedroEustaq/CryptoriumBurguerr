@@ -1,74 +1,87 @@
 @media (max-width: 1280px) {
-    .LandingHome > img {
-         width: 110%;
+    .LandingHome>img {
+        width: 110%;
     }
+
     .ScrollForno {
         display: flex;
         overflow-y: hidden;
 
 
-    flex-wrap: nowrap;
-    justify-content: flex-start;
-    overflow-x: auto;
-    padding-bottom: 8px;
-    scrollbar-width: thin;
-    scrollbar-color: rgba(255, 170, 20, 0.55) transparent;    
-}
+        flex-wrap: nowrap;
+        justify-content: flex-start;
+        overflow-x: auto;
+        padding-bottom: 8px;
+        scrollbar-width: thin;
+        scrollbar-color: rgba(255, 170, 20, 0.55) transparent;
+    }
+
     .BlocoBurguer {
-        flex-shrink:0;
-            
+        flex-shrink: 0;
+
     }
 
     @keyframes emojiPulando {
-    0%, 100% { transform: translateY(0) scale(1.0); }
-    50% { transform: translateY(-8px) scale(1.2); }
-}
-.lista-ingredientes-sutil {
-    font-size: 17px;
-    width: 170%;
-    max-width: none;
-    white-space: nowrap;
-    z-index: 999;
-}
-.slide-panel {
-    max-width: none;
-}
 
-.crypto-forno {
-    display: flex;
-    align-items: flex-start;
-}
-.crypto-forno .ScrollForno {
-    flex-flow: column nowrap;
-    padding-right: 0px;
-}
-.categoria-burguers {
-    overflow-x: auto;
-    padding-bottom: 8px;
-    scrollbar-width: thin;
-    scrollbar-color: rgba(255, 170, 20, 0.55) transparent;   
-}
+        0%,
+        100% {
+            transform: translateY(0) scale(1.0);
+        }
 
-
- .crypto-header{
-        width:95%;
-        padding:8px 12px;
+        50% {
+            transform: translateY(-8px) scale(1.2);
+        }
     }
 
-    .crypto-header-logo{
-        font-size:.95rem;
+    .lista-ingredientes-sutil {
+        font-size: 17px;
+        width: 170%;
+        max-width: none;
+        white-space: nowrap;
+        z-index: 999;
     }
 
-    .crypto-header-nav{
-        gap:2px;
+    .slide-panel {
+        max-width: none;
     }
 
-    .crypto-header-nav a{
-        font-size:.75rem;
-        padding:6px 8px;
+    .crypto-forno {
+        display: flex;
+        align-items: flex-start;
     }
 
-    .crypto-header-nav .pedido-btn span{
-        display:none;
+    .crypto-forno .ScrollForno {
+        flex-flow: column nowrap;
+        padding-right: 0px;
+    }
+
+    .categoria-burguers {
+        overflow-x: auto;
+        padding-bottom: 8px;
+        scrollbar-width: thin;
+        scrollbar-color: rgba(255, 170, 20, 0.55) transparent;
+    }
+
+
+    .crypto-header {
+        width: 95%;
+        padding: 8px 12px;
+    }
+
+    .crypto-header-logo {
+        font-size: .95rem;
+    }
+
+    .crypto-header-nav {
+        gap: 2px;
+    }
+
+    .crypto-header-nav a {
+        font-size: .75rem;
+        padding: 6px 8px;
+    }
+
+    .crypto-header-nav .pedido-btn span {
+        display: none;
     }
 }
