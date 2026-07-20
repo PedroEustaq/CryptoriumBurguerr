@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,6 +13,7 @@
     <link rel="stylesheet" href="css/celular.css">
     <link rel="icon" href="img/favicon.png" type="image/x-icon">
 </head>
+
 <body>
     <header class="crypto-header">
         <a href="index.html" class="crypto-header-logo">Cryptorium Burguer</a>
@@ -66,7 +68,8 @@
         <section class="cardapio-topo">
             <h1>Cardápio de Hambúrgueres</h1>
             <div class="busca-wrap">
-                <input type="search" id="busca-burguer" placeholder="Pesquisar Burguer" aria-label="Pesquisar hamburguer por nome">
+                <input type="search" id="busca-burguer" placeholder="Pesquisar Burguer"
+                    aria-label="Pesquisar hamburguer por nome">
             </div>
         </section>
 
@@ -74,73 +77,78 @@
             <div class="secao-topo">
                 <h2 class="secao-titulo">Em Alta</h2>
                 <div class="secao-controles">
-                    <button class="scroll-btn" type="button" data-scroll-target="secao-em-alta" data-dir="left" aria-label="Rolar para esquerda">‹</button>
-                    <button class="scroll-btn" type="button" data-scroll-target="secao-em-alta" data-dir="right" aria-label="Rolar para direita">›</button>
+                    <button class="scroll-btn" type="button" data-scroll-target="secao-em-alta" data-dir="left"
+                        aria-label="Rolar para esquerda">‹</button>
+                    <button class="scroll-btn" type="button" data-scroll-target="secao-em-alta" data-dir="right"
+                        aria-label="Rolar para direita">›</button>
                 </div>
             </div>
             <section class="grade-burguers secao-fileira ScrollForno" id="secao-em-alta">
-                <article class="BlocoBurguer" data-search="bitcoin burger">
-                    <div class="promocionalBurguer">
-                        <div class="fundo fundo--yellow"></div>
-                        <img src="img/bitcoinburguer.png" alt="Bitcoin Burger" class="SoBurguer">
-                    </div>
-                    <div class="InfoBurguer">
-                        <h2>Bitcoin Burger</h2>
-                        <p>Blend premium, queijo cheddar e molho da casa.</p>
-                    </div>
-                </article>
+    <article class="BlocoBurguer" data-search="bitcoin burger">
+        <div class="promocionalBurguer">
+            <div class="fundo"></div>
+            <img src="img/bitcoinburguer.png" alt="Bitcoin Burguer" class="SoBurguer">
+        </div>
+        <div class="InfoBurguer">
+            <h2>Bitcoin Burguer</h2>
+            <p>Blend premium, cheddar derretido e molho exclusivo.</p>
+        </div>
+    </article>
 
-                <article class="BlocoBurguer" data-search="cheese burger chesse">
-                    <div class="promocionalBurguer">
-                        <div class="fundo fundo--yellow"></div>
-                        <img src="img/chesseburguer.png" alt="Cheese Burger" class="SoBurguer">
-                    </div>
-                    <div class="InfoBurguer">
-                        <h2>Cheese Burger</h2>
-                        <p>Queijo em destaque e finalizacao cremosa.</p>
-                    </div>
-                </article>
+    <article class="BlocoBurguer" data-search="ethereum smash">
+        <div class="promocionalBurguer">
+            <div class="fundo fundo--yellow"></div>
+            <img src="img/chesseburguer.png" alt="Ethereum Smash" class="SoBurguer">
+        </div>
+        <div class="InfoBurguer">
+            <h2>Ethereum Smash</h2>
+            <p>Dois smash burgers com queijo e cebola caramelizada.</p>
+        </div>
+    </article>
 
-                <article class="BlocoBurguer" data-search="combo bitcoin coca">
-                    <div class="promocionalBurguer">
-                        <div class="fundo fundo--yellow"></div>
-                        <img src="img/burgaoECoca.png" alt="Combo Bitcoin">
-                    </div>
-                    <div class="InfoBurguer">
-                        <h2>Combo Bitcoin</h2>
-                        <p>Burger + refri no combo mais pedido do cardapio.</p>
-                    </div>
-                </article>
-                <article class="BlocoBurguer" data-search="combo bitcoin coca">
-                    <div class="promocionalBurguer">
-                        <div class="fundo fundo--yellow"></div>
-                        <img src="img/burgaoECoca.png" alt="Combo Bitcoin">
-                    </div>
-                    <div class="InfoBurguer">
-                        <h2>Combo Bitcoin</h2>
-                        <p>Burger + refri no combo mais pedido do cardapio.</p>
-                    </div>
-                </article>
+    <article class="BlocoBurguer" data-search="crypto combo">
+        <div class="promocionalBurguer">
+            <div class="fundo"></div>
+            <img src="img/burgaoECoca.png" alt="Crypto Combo">
+        </div>
+        <div class="InfoBurguer">
+            <h2>Crypto Combo</h2>
+            <p>Hambúrguer, batata e refrigerante no combo perfeito.</p>
+        </div>
+    </article>
 
-                <article class="BlocoBurguer" data-search="onion burger cebola">
-                    <div class="promocionalBurguer">
-                        <div class="fundo fundo--pink"></div>
-                        <img src="img/onionburguer.png" alt="Onion Burger" class="SoBurguer">
-                    </div>
-                    <div class="InfoBurguer">
-                        <h2>Onion Burger</h2>
-                        <p>Cebola caramelizada e toque especial da cozinha.</p>
-                    </div>
-                </article>
-            </section>
+    <article class="BlocoBurguer" data-search="bull market burger">
+        <div class="promocionalBurguer">
+            <div class="fundo fundo--blue"></div>
+            <img src="img/burgaoECoca.png" alt="Bull Market">
+        </div>
+        <div class="InfoBurguer">
+            <h2>Bull Market</h2>
+            <p>Duplo cheddar, bacon e molho da casa.</p>
+        </div>
+    </article>
+
+    <article class="BlocoBurguer" data-search="moon burger">
+        <div class="promocionalBurguer">
+            <div class="fundo fundo--pink"></div>
+            <img src="img/onionburguer.png" alt="Moon Burguer" class="SoBurguer">
+        </div>
+        <div class="InfoBurguer">
+            <h2>Moon Burguer</h2>
+            <p>O hambúrguer que leva seu sabor até a lua.</p>
+        </div>
+    </article>
+</section>
         </section>
 
         <section class="cardapio-secao">
             <div class="secao-topo">
                 <h2 class="secao-titulo">Clássicos da Casa</h2>
                 <div class="secao-controles">
-                    <button class="scroll-btn" type="button" data-scroll-target="secao-classicos" data-dir="left" aria-label="Rolar para esquerda">‹</button>
-                    <button class="scroll-btn" type="button" data-scroll-target="secao-classicos" data-dir="right" aria-label="Rolar para direita">›</button>
+                    <button class="scroll-btn" type="button" data-scroll-target="secao-classicos" data-dir="left"
+                        aria-label="Rolar para esquerda">‹</button>
+                    <button class="scroll-btn" type="button" data-scroll-target="secao-classicos" data-dir="right"
+                        aria-label="Rolar para direita">›</button>
                 </div>
             </div>
             <section class="grade-burguers secao-fileira ScrollForno" id="secao-classicos">
@@ -150,8 +158,8 @@
                         <img src="img/classicburguer.png" alt="Classic Burger" class="SoBurguer">
                     </div>
                     <div class="InfoBurguer">
-                        <h2>Classic Burger</h2>
-                        <p>Sabor tradicional com pao macio e carne suculenta.</p>
+                        <h2>Classic Burguer</h2>
+                        <p>Sabor tradicional com pão macio e carne suculenta.</p>
                     </div>
                 </article>
 
@@ -161,8 +169,8 @@
                         <img src="img/strangeburguer.png" alt="Strange Burger" class="SoBurguer">
                     </div>
                     <div class="InfoBurguer">
-                        <h2>Strange Burger</h2>
-                        <p>Receita diferente com combinacao surpreendente.</p>
+                        <h2>Strange Burguer</h2>
+                        <p>Receita diferente com combinação surpreendente.</p>
                     </div>
                 </article>
 
@@ -172,8 +180,8 @@
                         <img src="img/happiburguer.png" alt="Happi Burger" class="SoBurguer">
                     </div>
                     <div class="InfoBurguer">
-                        <h2>Happi Burger</h2>
-                        <p>Opcao divertida com muito sabor em cada mordida.</p>
+                        <h2>Happi Burguer</h2>
+                        <p>Opção divertida com muito sabor em cada mordida.</p>
                     </div>
                 </article>
 
@@ -184,7 +192,7 @@
                     </div>
                     <div class="InfoBurguer">
                         <h2>Combo Etherium</h2>
-                        <p>Versao combo com sabor intenso e visual marcante.</p>
+                        <p>Versão combo com sabor intenso e visual marcante.</p>
                     </div>
                 </article>
             </section>
@@ -194,55 +202,57 @@
             <div class="secao-topo">
                 <h2 class="secao-titulo">Combos para Compartilhar</h2>
                 <div class="secao-controles">
-                    <button class="scroll-btn" type="button" data-scroll-target="secao-combos" data-dir="left" aria-label="Rolar para esquerda">‹</button>
-                    <button class="scroll-btn" type="button" data-scroll-target="secao-combos" data-dir="right" aria-label="Rolar para direita">›</button>
+                    <button class="scroll-btn" type="button" data-scroll-target="secao-combos" data-dir="left"
+                        aria-label="Rolar para esquerda">‹</button>
+                    <button class="scroll-btn" type="button" data-scroll-target="secao-combos" data-dir="right"
+                        aria-label="Rolar para direita">›</button>
                 </div>
             </div>
             <section class="grade-burguers secao-fileira ScrollForno" id="secao-combos">
-                <article class="BlocoBurguer" data-search="combo bitcoin coca">
-                    <div class="promocionalBurguer">
-                        <div class="fundo fundo--yellow"></div>
-                        <img src="img/burgaoECoca.png" alt="Combo Bitcoin">
-                    </div>
-                    <div class="InfoBurguer">
-                        <h2>Combo Bitcoin</h2>
-                        <p>Combo completo para matar a fome da galera.</p>
-                    </div>
-                </article>
+    <article class="BlocoBurguer" data-search="combo apr staking">
+        <div class="promocionalBurguer">
+            <div class="fundo fundo--yellow"></div>
+            <img src="img/burgaoECoca.png" alt="Combo APR">
+        </div>
+        <div class="InfoBurguer">
+            <h2>Combo APR</h2>
+            <p>Rendimento máximo de sabor com burger, batata e refri.</p>
+        </div>
+    </article>
 
-                <article class="BlocoBurguer" data-search="combo etherium ethe coka">
-                    <div class="promocionalBurguer">
-                        <div class="fundo fundo--blue"></div>
-                        <img src="img/etheCoka.png" alt="Combo Etherium">
-                    </div>
-                    <div class="InfoBurguer">
-                        <h2>Combo Etherium</h2>
-                        <p>Sabor forte com acompanhamento gelado.</p>
-                    </div>
-                </article>
+    <article class="BlocoBurguer" data-search="combo ethereum eth">
+        <div class="promocionalBurguer">
+            <div class="fundo fundo--blue"></div>
+            <img src="img/etheCoka.png" alt="Combo Ethereum">
+        </div>
+        <div class="InfoBurguer">
+            <h2>Combo Ethereum</h2>
+            <p>O combo inteligente com muito queijo e refrigerante gelado.</p>
+        </div>
+    </article>
 
-                <article class="BlocoBurguer" data-search="cheese burger chesse">
-                    <div class="promocionalBurguer">
-                        <div class="fundo fundo--yellow"></div>
-                        <img src="img/chesseburguer.png" alt="Cheese Burger" class="SoBurguer">
-                    </div>
-                    <div class="InfoBurguer">
-                        <h2>Cheese Burger</h2>
-                        <p>Perfeito para completar qualquer combo.</p>
-                    </div>
-                </article>
+    <article class="BlocoBurguer" data-search="combo solana sol">
+        <div class="promocionalBurguer">
+            <div class="fundo fundo--yellow"></div>
+            <img src="img/chesseburguer.png" alt="Combo Solana" class="SoBurguer">
+        </div>
+        <div class="InfoBurguer">
+            <h2>Combo Solana</h2>
+            <p>Velocidade, sabor e crocância em um só pedido.</p>
+        </div>
+    </article>
 
-                <article class="BlocoBurguer" data-search="classic burger classic">
-                    <div class="promocionalBurguer">
-                        <div class="fundo fundo--blue"></div>
-                        <img src="img/classicburguer.png" alt="Classic Burger" class="SoBurguer">
-                    </div>
-                    <div class="InfoBurguer">
-                        <h2>Classic Burger</h2>
-                        <p>Sempre cai bem em qualquer pedido.</p>
-                    </div>
-                </article>
-            </section>
+    <article class="BlocoBurguer" data-search="combo bnb binance">
+        <div class="promocionalBurguer">
+            <div class="fundo fundo--blue"></div>
+            <img src="img/classicburguer.png" alt="Combo BNB" class="SoBurguer">
+        </div>
+        <div class="InfoBurguer">
+            <h2>Combo BNB</h2>
+            <p>O combo premium para quem não abre mão de qualidade.</p>
+        </div>
+    </article>
+</section>
         </section>
 
         <p class="nenhum-resultado" id="sem-resultado" hidden>Nenhum hambúrguer encontrado.</p>
@@ -260,7 +270,10 @@
 
                 <div class="rodape-mapa">
                     <!-- Substitua esta imagem pelo mapa do Google quando estiver pronto -->
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3794749.1991066104!2d-47.95713616390871!3d-21.748899575879797!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce593bc14bfbe5%3A0x49f6d841fdb8ced0!2sBom%20Beef%20Burgers%20Vila%20Mariana!5e0!3m2!1spt-BR!2sbr!4v1784389379904!5m2!1spt-BR!2sbr" width="300" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>    
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3794749.1991066104!2d-47.95713616390871!3d-21.748899575879797!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce593bc14bfbe5%3A0x49f6d841fdb8ced0!2sBom%20Beef%20Burgers%20Vila%20Mariana!5e0!3m2!1spt-BR!2sbr!4v1784389379904!5m2!1spt-BR!2sbr"
+                        width="300" height="300" style="border:0;" allowfullscreen="" loading="lazy"
+                        referrerpolicy="strict-origin-when-cross-origin"></iframe>
                 </div>
             </div>
 
@@ -276,8 +289,7 @@
                 <h3>Siga-nos</h3>
                 <div class="rodape-icones-sociais">
                     <a href="#" aria-label="Instagram" class="icone-social">
-                        <img src="svgIcons/ri_instagram-fill.svg" class="iconeBranco"
-                            alt="Instagram"> </a>
+                        <img src="svgIcons/ri_instagram-fill.svg" class="iconeBranco" alt="Instagram"> </a>
                     <a href="#" aria-label="Facebook" class="icone-social">
 
                         <img src="svgIcons/ic_baseline-facebook.svg" class="iconeBranco" alt="">
@@ -359,5 +371,5 @@
         });
     </script>
 </body>
-</html>
 
+</html>
