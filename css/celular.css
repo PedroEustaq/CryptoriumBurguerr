@@ -107,4 +107,10 @@
 .crypto-hero-button.IrCardapio {
     display: flex;
 }
+.crypto-header-nav.home > :first-child {
+    display: none;
+}
+.crypto-header-nav.home > :nth-child(2) {
+    display: none;
+}
 }

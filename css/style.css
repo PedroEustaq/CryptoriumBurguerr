@@ -10,7 +10,9 @@ html {
 }
 
 
-
+.crypto-hero-button.IrCardapio {
+  display: none
+}
 
 body{
    min-height: 100vh; /* permite rolar até o fim: corpo cresce com o conteúdo */
@@ -22,7 +24,6 @@ body{
    flex-flow: column nowrap;
    justify-content: flex-start;
    align-items: center;
-   overflow-x: hidden;
  }
   
   /* barra de progresso do scroll (timeline via scroll()) */
