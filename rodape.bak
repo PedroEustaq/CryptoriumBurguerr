@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rodapé Crypto Burguer</title>
+    <link rel="stylesheet" href="rodape.css">
+</head>
+<body>
+
+    <section class="rodape">
+        <div class="rodape-conteudo">
+            <div class="rodape-coluna rodape-contato">
+                <h3>Contato</h3>
+                <ul class="rodape-lista">
+                    <li>suporte@cryptoburguer.com</li>
+                    <li>📱 (31) 99983-1366</li>
+                    <li>📍 Rua André Fernandes, Nova Suíça</li>
+                </ul>
+
+                <div class="rodape-mapa">
+                    <!-- Substitua esta imagem pelo mapa do Google quando estiver pronto -->
+                    <img src="img/mapa-google.png" alt="Mapa da região da Crypto Burguer">
+                </div>
+            </div>
+
+            <div class="rodape-coluna rodape-suporte">
+                <h3>Suporte</h3>
+                <ul class="rodape-lista">
+                    <li><a href="#">Termos e Condições</a></li>
+                    <li><a href="#">Política de Privacidade</a></li>
+                </ul>
+            </div>
+
+            <div class="rodape-coluna rodape-social">
+                <h3>Siga-nos</h3>
+                <div class="rodape-icones-sociais">
+                    <a href="#" aria-label="Instagram" class="icone-social">IG</a>
+                    <a href="#" aria-label="Facebook" class="icone-social">FB</a>
+                    <a href="#" aria-label="YouTube" class="icone-social">YT</a>
+                    <a href="#" aria-label="X (Twitter)" class="icone-social">X</a>
+                </div>
+
+                <div class="rodape-logo">
+                    <!-- Substitua esta imagem pelo logo oficial da Crypto Burguer -->
+                    <img src="logoCrypto.png" alt="Logo Crypto Burguer">
+                </div>
+            </div>
+        </div>
+
+        <div class="rodape-direitos">
+            <p>Copyright © 2010-2026<br>
+                Crypto Burguer<br>
+                Todos os direitos reservados.
+            </p>
+        </div>
+    </section>
+</body>
+</html>
